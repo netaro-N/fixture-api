@@ -3,3 +3,31 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  div
+    table(border="1" style="font-size: 20px;")
+      tr
+        th fixtureId (La24) 
+        td fixtureSort (ラ・リーガ第24節)
+      tr
+        td(colspan="2") fixtureDate (2019/02/17 20:00~キックオフ)
+    p
+  div
+    table(border="2"  style="font-size: 20px;")
+      tr
+        th(colspan="2") ホーム
+        td 
+        th(colspan="2") アウェイ
+      tr
+        td Real Madrid
+        td 1
+        td -
+        td 2
+        td Girona FC
+    p
+  div
+    table(border="3" style="font-size: 20px;")
+      tr
+        td 
+          a(href="") 前の試合
+        td
+          a(href="") 次の試合
