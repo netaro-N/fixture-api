@@ -1,7 +1,7 @@
 - [x] layout.pug　および継承
 - [x] index.pug（確認したい日程データの表示テーブル、保存ボタン、編集・新規ページへのリンク）
 - [ ] csv保存ボタン
-  - [ ] データモデル実装（model/fixture.js）
+  - [x] データモデル実装（model/fixture.js）
   - [ ] Webpack
   - [ ] Ajax処理（entry.js）
   - [ ] csv保存ボタンを押して、データベースに保存
