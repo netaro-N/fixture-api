@@ -5,6 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
 
+// アプリ起動時にモデルに合わせてテーブルを作成
+var Fixture = require('./models/fixture');
+Fixture.sync();
+
 var indexRouter = require('./routes/index');
 
 var app = express();
