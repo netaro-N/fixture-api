@@ -86,10 +86,24 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'jQuery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
+
+
+var buttonCsvParse = !(function webpackMissingModule() { var e = new Error("Cannot find module 'jQuery'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())('#csv-parse-button');
+buttonCsvParse.click(function () {
+  var confirm = confirm('サーバーにあるcsvファイルをデータベースに保存しますか？');
+
+  if (confirm) {
+    console.log('保存を実行します');
+  }
+
+  ;
+});
 
 /***/ })
 /******/ ]);
