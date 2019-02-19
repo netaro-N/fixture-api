@@ -23,6 +23,7 @@ router.post('/1234', (req, res, next) => {
     trim: false
   });
   res.json({ status: 'OK', Parse:Parse });
+  console.log(Parse);
   console.log('サーバーサイドおK');
 });
 

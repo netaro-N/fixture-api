@@ -102,7 +102,7 @@ buttonCsvParse.click(function () {
   if (confirm) {
     console.log('保存を実行します');
     jQuery__WEBPACK_IMPORTED_MODULE_0___default.a.post('/1234', function (data) {
-      console.log('結果は' + data);
+      console.log('結果は' + data.Parse[1].fixtureId);
     });
   }
 

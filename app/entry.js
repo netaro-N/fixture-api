@@ -7,7 +7,7 @@ buttonCsvParse.click(() => {
   if (confirm) {
     console.log('保存を実行します');
     $.post('/1234',(data) => {
-      console.log('結果は'+data[0]);
+      console.log('結果は'+data.Parse[1].fixtureId);
     });
   };
 });
