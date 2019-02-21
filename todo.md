@@ -5,7 +5,8 @@
   - [x] Webpack
   - [x] モデルの同機読み込み
   - [x] Ajax処理（entry.js）
-  - [ ] csv保存ボタンを押して、データベースに保存
+  - [x] csv保存ボタンを押して、データベースに保存
+  - [ ] データベースからデータを引き出す（日付順）
 
 - [ ] 各日程ページ（/:fixtureId , fixture.pug , ）
   - [ ] index.js (get /:fixtureId 時)
