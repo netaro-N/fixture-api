@@ -3,6 +3,7 @@ var router = express.Router();
 const fs = require('fs');
 const csvParse = require('csv-parse/lib/sync'); // requiring sync module
 const moment = require('moment-timezone');
+const Fixture = require('../models/fixture');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,7 +27,7 @@ router.post('/1234', (req, res, next) => {
   Parse.forEach((f,i) =>{
     f.formattedDate = moment(f.fixtureDate,'DD/MM/YYYY HH:mm').add(8, 'hours').format("YYYY/MM/DD HH:mm");
     console.log(f.fixtureDate + ' → ' + f.formattedDate);
-    //保存時はmoment-timeモジュールによって( DD/MM/YYYY HH:hh → YYYY/MM/DD HH:hh )表記へ
+
     /*
     Fixture.upsert({
       gameNumber: f.gameNumber,
