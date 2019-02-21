@@ -28,13 +28,17 @@ router.post('/1234', (req, res, next) => {
     f.formattedDate = moment(f.fixtureDate,'DD/MM/YYYY HH:mm').add(8, 'hours').format("YYYY/MM/DD HH:mm");
     console.log(f.fixtureDate + ' → ' + f.formattedDate);
 
-    /*
+    // fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
     Fixture.upsert({
-      gameNumber: f.gameNumber,
-      fixtureDate: f.fixtureDate,
-      fixtureSort: f.fixtureSort
+      fixtureId: f.fixtureId,
+      fixtureDate: f.formattedDate,
+      fixtureSort: f.fixtureSort,
+      homeTeam: f.homeTeam,
+      awayTeam: f.awayTeam,
+      homeScore: f.homeScore,
+      awayScore: f.awayScore
     });
-    */
+
   });
   res.json({ status: 'OK', Parse:Parse });
   console.log('サーバーサイドおK');

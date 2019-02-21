@@ -5,7 +5,7 @@ const Sequelize = loader.Sequelize;
 
 const Fixture = loader.database.define('fixtures', {
   fixtureId: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     primaryKey: true,
     allowNull: false
   },
@@ -18,11 +18,11 @@ const Fixture = loader.database.define('fixtures', {
     allowNull: false
   },
   homeTeam:{
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull:false
   },
   awayTeam: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull:false
   },
   homeScore: {
