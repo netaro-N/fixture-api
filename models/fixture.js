@@ -27,11 +27,13 @@ const Fixture = loader.database.define('fixtures', {
   },
   homeScore: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: true,
+    defaultValue: null
   },
   awayScore: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: true,
+    defaultValue: null
   }
 }, {
     freezeTableName: true,
