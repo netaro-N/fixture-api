@@ -1,1 +1,31 @@
 extends layout
+
+block content
+  div
+    table(border="1" style="font-size: 20px;")
+      tr
+        th fixtureId : (#{fixture.fixtureId})
+        td fixtureSort : (#{fixture.fixtureSort})
+      tr
+        td(colspan="2") fixtureDate :(#{fixture.fixtureDate})
+    p
+  div
+    table(border="2"  style="font-size: 20px;")
+      tr
+        th(colspan="2") ホーム
+        td 
+        th(colspan="2") アウェイ
+      tr
+        td #{fixture.homeTeam}
+        td #{fixture.homeScore}
+        td -
+        td #{fixture.awayTeam}
+        td #{fixture.awayScore}
+    p
+  div
+    table(border="3" style="font-size: 20px;")
+      tr
+        td 
+          a(href="") 前の試合
+        td
+          a(href="") 次の試合
