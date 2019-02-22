@@ -1,13 +1,14 @@
 extends layout
 
 block content
+  p #{title}
   div
     table(border="1" style="font-size: 20px;")
       tr
-        th fixtureId : (#{fixture.fixtureId})
-        td fixtureSort : (#{fixture.fixtureSort})
+        th fixtureId :
+        td fixtureSort :
       tr
-        td(colspan="2") fixtureDate :(#{fixture.fixtureDate})
+        td(colspan="2") fixtureDate :
     p
   div
     table(border="2"  style="font-size: 20px;")
@@ -16,11 +17,11 @@ block content
         td 
         th(colspan="2") アウェイ
       tr
-        td #{fixture.homeTeam}
-        td #{fixture.homeScore}
+        td 
+        td 
         td -
-        td #{fixture.awayTeam}
-        td #{fixture.awayScore}
+        td 
+        td 
     p
   div
     table(border="3" style="font-size: 20px;")

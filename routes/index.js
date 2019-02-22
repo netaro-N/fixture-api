@@ -10,6 +10,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/:fixtureId', function(req, res, next) {
+  res.render('fixture', { title: 'こちらは個別ページです' });
+});
 
 router.post('/1234', (req, res, next) => {
   const file = 'real18-19.csv';
