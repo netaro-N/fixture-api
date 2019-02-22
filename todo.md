@@ -8,7 +8,8 @@
   - [x] csv保存ボタンを押して、データベースに保存
 
 - [ ] 各日程ページ（/:fixtureId , fixture.pug , ）
-  - [ ] fixture.pug
+  - [x] fixture.pug
   - [ ] index.js (get /:fixtureId 時)
+    - [ ]データベース取得、Id不在時リダイレクト、データ転送
 
 - [ ]
