@@ -11,7 +11,23 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:fixtureId', function(req, res, next) {
-  res.render('fixture', { title: 'こちらは個別ページです' });
+  console.log(req.params.fixtureId);
+  Fixture.findOne({
+    where: {
+      fixtureId: req.params.fixtureId
+    }
+  }).then((fixture) => {
+    if (fixture) {
+      res.render('fixture', {
+         title: 'こちらは個別ページです',
+         fixture: fixture 
+      });
+    }else {
+      const err = new Error('指定された予定は見つかりません');
+      err.status = 404;
+      next(err);
+    }
+  })
 });
 
 router.post('/1234', (req, res, next) => {
