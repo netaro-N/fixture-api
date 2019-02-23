@@ -18,15 +18,17 @@ router.get('/', function(req, res, next) {
   let nowTime = new Date();
   console.log(nowTime);
   nowTime.setHours(nowTime.getHours() + 2);
+  const japanNowTime = moment(nowTime).tz('Asia/Tokyo');
 //2018-08-27 06:15:00+00
   Fixture.findOne( {
     where : {
-      fixtureDate: { [Op.lt]:nowTime }
+      fixtureDate: { [Op.lt]:japanNowTime }
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
     if (fixture) {
       console.log(nowTime);
+      console.log(japanNowTime);
      // fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       res.render('index', {
          title: 'こちらはトップページです',
