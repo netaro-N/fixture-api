@@ -5,6 +5,11 @@ const csvParse = require('csv-parse/lib/sync'); // requiring sync module
 const moment = require('moment-timezone');
 const Fixture = require('../models/fixture');
 
+//曜日を入れてみた
+moment.lang('ja', {
+  weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"],
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -18,6 +23,7 @@ router.get('/:fixtureId', function(req, res, next) {
     }
   }).then((fixture) => {
     if (fixture) {
+      fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       res.render('fixture', {
          title: 'こちらは個別ページです',
          fixture: fixture 
