@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 
   Fixture.findOne( {
     where : {
-      homeTeam: 'Real Madrid'
+      fixtureDate: '2018-08-27 06:15:00+00'
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
