@@ -15,17 +15,18 @@ moment.locale('ja', {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const nowTime = new Date('2019-02-17 00:00:00.000 +00:00');
+  let nowTime = new Date();
+  console.log(nowTime);
+  nowTime.setHours(nowTime.getHours() + 2);
 //2018-08-27 06:15:00+00
   Fixture.findOne( {
     where : {
-      fixtureDate: { [Op.lt]:new Date() }
+      fixtureDate: { [Op.lt]:nowTime }
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
     if (fixture) {
-      console.log(fixture);
-      console.log(fixture.fixtureDate);
+      console.log(nowTime);
      // fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       res.render('index', {
          title: 'こちらはトップページです',
