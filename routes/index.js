@@ -3,6 +3,9 @@ var router = express.Router();
 const fs = require('fs');
 const csvParse = require('csv-parse/lib/sync'); // requiring sync module
 const moment = require('moment-timezone');
+const loader = require('sequelize');
+const Sequelize = loader.Sequelize;
+const Op = Sequelize.Op
 const Fixture = require('../models/fixture');
 
 //曜日を入れてみた
@@ -13,10 +16,10 @@ moment.locale('ja', {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const nowTime = new Date('2019-02-17 00:00:00.000 +00:00');
-
+//2018-08-27 06:15:00+00
   Fixture.findOne( {
     where : {
-      fixtureDate: '2018-08-27 06:15:00+00'
+      homeTeam: { [Op.like]:'Real%' }
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
