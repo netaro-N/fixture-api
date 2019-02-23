@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 //2018-08-27 06:15:00+00
   Fixture.findOne( {
     where : {
-      homeTeam: { [Op.like]:'Real%' }
+      fixtureDate: { [Op.lt]:new Date() }
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
