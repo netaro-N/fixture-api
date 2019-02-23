@@ -6,13 +6,35 @@ const moment = require('moment-timezone');
 const Fixture = require('../models/fixture');
 
 //曜日を入れてみた
-moment.lang('ja', {
+moment.locale('ja', {
   weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"],
 });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  const nowTime = new Date('2019-02-17 00:00:00.000 +00:00');
+
+  Fixture.findOne( {
+    where : {
+      homeTeam: 'Real Madrid'
+    },
+    order: [['"fixtureDate"', 'DESC']]
+  }).then((fixture) => {
+    if (fixture) {
+      console.log(fixture);
+      console.log(fixture.fixtureDate);
+     // fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
+      res.render('index', {
+         title: 'こちらはトップページです',
+         fixture: fixture 
+      });
+    }else {
+      const err = new Error('指定された予定は見つかりません');
+      err.status = 404;
+      next(err);
+    }
+  })
+
 });
 
 router.get('/:fixtureId', function(req, res, next) {
