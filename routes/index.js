@@ -4,7 +4,7 @@ const fs = require('fs');
 const csvParse = require('csv-parse/lib/sync'); // requiring sync module
 const moment = require('moment-timezone');
 const Sequelize = require('sequelize');
-const Op = Sequelize.Op
+const Op = Sequelize.Op;
 const Fixture = require('../models/fixture');
 
 //曜日を入れてみた
@@ -16,11 +16,11 @@ moment.locale('ja', {
 router.get('/', function(req, res, next) {
   let nowTime = new Date();
   nowTime.setHours(nowTime.getHours() + 2);
-  const japanNowTime = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
+  const japanTimeplus2 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
 
   Fixture.findOne( {
     where : {
-      fixtureDate: { [Op.lt]:japanNowTime }
+      fixtureDate: { [Op.lte]:japanTimeplus2 } // fixtureDate <= japanTimeplus2
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
