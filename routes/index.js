@@ -16,8 +16,8 @@ moment.locale('ja', {
 router.get('/', function(req, res, next) {
   let nowTime = new Date();
   console.log(nowTime);
-  nowTime.setHours(nowTime.getHours() + 7);
-  const japanNowTime = moment(nowTime).tz('Asia/Tokyo').format(); // これではmoment.parseZone("2019-02-25T00:33:49.792+09:00")になってしまう
+  nowTime.setHours(nowTime.getHours() + 2);
+  const japanNowTime = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
 //2018-08-27 06:15:00+00
   Fixture.findOne( {
     where : {
