@@ -3,8 +3,7 @@ var router = express.Router();
 const fs = require('fs');
 const csvParse = require('csv-parse/lib/sync'); // requiring sync module
 const moment = require('moment-timezone');
-const loader = require('sequelize');
-const Sequelize = loader.Sequelize;
+const Sequelize = require('sequelize');
 const Op = Sequelize.Op
 const Fixture = require('../models/fixture');
 
