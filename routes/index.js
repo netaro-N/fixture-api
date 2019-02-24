@@ -15,10 +15,9 @@ moment.locale('ja', {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let nowTime = new Date();
-  console.log(nowTime);
   nowTime.setHours(nowTime.getHours() + 2);
   const japanNowTime = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
-//2018-08-27 06:15:00+00
+
   Fixture.findOne( {
     where : {
       fixtureDate: { [Op.lt]:japanNowTime }
@@ -26,9 +25,7 @@ router.get('/', function(req, res, next) {
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
     if (fixture) {
-      console.log(nowTime);
-      console.log(japanNowTime);
-     // fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
+      fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       res.render('index', {
          title: 'こちらはトップページです',
          fixture: fixture 

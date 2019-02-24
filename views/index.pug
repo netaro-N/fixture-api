@@ -10,9 +10,9 @@ block content
     table(border="1" style="font-size: 20px;")
       tr
         th fixtureId : #{fixture.fixtureId}
-        td fixtureSort 
+        td fixtureSort : #{fixture.fixtureSort}
       tr
-        td(colspan="2") fixtureDate : #{fixture.fixtureDate}
+        td(colspan="2") fixtureDate : #{fixture.formattedDate}
     p
   div
     table(border="2"  style="font-size: 20px;")
@@ -21,11 +21,11 @@ block content
         td 
         th(colspan="2") アウェイ
       tr
-        td 
-        td
+        td #{fixture.homeTeam}
+        td #{fixture.homeScore}
         td -
-        td
-        td 
+        td #{fixture.awayScore}
+        td #{fixture.awayTeam}
     p
   div
     table(border="3" style="font-size: 20px;")
