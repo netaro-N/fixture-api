@@ -79,6 +79,25 @@ router.get('/:fixtureDate/last', (req, res, next) => {
   })
 });
 
+router.get('/:fixtureDate/next', (req, res, next) => {
+  const originDate = moment(req.params.fixtureDate);
+  console.log(originDate);
+  Fixture.findOne({
+    where: {
+      fixtureDate: { [Op.gt]:originDate }
+    },
+    order: [['"fixtureDate"', 'ASC']]
+  }).then((fixture) => {
+    if (fixture) {
+      res.redirect(`/${fixture.fixtureId}`);
+    }else {
+      const err = new Error('これより後の試合はありません');
+      err.status = 404;
+      next(err);
+    }
+  })
+});
+
 router.post('/1234', (req, res, next) => {
   const file = 'real18-19.csv';
   let data = fs.readFileSync(file);
