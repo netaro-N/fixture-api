@@ -65,7 +65,20 @@ router.get('/:fixtureId', function(req, res, next) {
 router.get('/:fixtureDate/last', (req, res, next) => {
   const originDate = moment(req.params.fixtureDate);
   console.log(originDate);
-    res.redirect('/Lali1');
+  Fixture.findOne({
+    where: {
+      fixtureDate: { [Op.lt]:originDate }
+    },
+    order: [['"fixtureDate"', 'DESC']]
+  }).then((fixture) => {
+    if (fixture) {
+      res.redirect(`/${fixture.fixtureId}`);
+    }else {
+      const err = new Error('これより前の試合はありません');
+      err.status = 404;
+      next(err);
+    }
+  })
 });
 
 router.post('/1234', (req, res, next) => {
