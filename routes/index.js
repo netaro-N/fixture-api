@@ -16,13 +16,11 @@ moment.locale('ja', {
 router.get('/', function(req, res, next) {
   const nowTime = new Date();
   nowTime.setHours(nowTime.getHours() + 2);
-  //const postDate = Date.parse(nowTime);
-
   const japanTimeplus2 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
-
+  console.log(new Date(japanTimeplus2));
   Fixture.findOne( {
     where : {
-      fixtureDate: { [Op.lte]:japanTimeplus2 } // fixtureDate <= japanTimeplus2
+      fixtureDate: { [Op.lte]:new Date(japanTimeplus2) } // fixtureDate <= japanTimeplus2
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
