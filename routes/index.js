@@ -14,8 +14,10 @@ moment.locale('ja', {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let nowTime = new Date();
+  const nowTime = new Date();
   nowTime.setHours(nowTime.getHours() + 2);
+  //const postDate = Date.parse(nowTime);
+
   const japanTimeplus2 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
 
   Fixture.findOne( {
@@ -60,8 +62,10 @@ router.get('/:fixtureId', function(req, res, next) {
   })
 });
 
-router.get('/:fixtureId/last', (req, res, next) => {
-  res.redirect('/Lali1');
+router.get('/:fixtureDate/last', (req, res, next) => {
+  const originDate = req.params.fixtureDate;
+  console.log(originDate);
+    res.redirect('/Lali1');
 });
 
 router.post('/1234', (req, res, next) => {
