@@ -60,6 +60,10 @@ router.get('/:fixtureId', function(req, res, next) {
   })
 });
 
+router.get('/:fixtureId/last', (req, res, next) => {
+  res.redirect('/Lali1');
+});
+
 router.post('/1234', (req, res, next) => {
   const file = 'real18-19.csv';
   let data = fs.readFileSync(file);
