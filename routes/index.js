@@ -63,7 +63,7 @@ router.get('/:fixtureId', function(req, res, next) {
 });
 
 router.get('/:fixtureDate/last', (req, res, next) => {
-  const originDate = req.params.fixtureDate;
+  const originDate = moment(req.params.fixtureDate);
   console.log(originDate);
     res.redirect('/Lali1');
 });
