@@ -3,4 +3,18 @@ extends layout
 block content
   h3= title
   form(method="post", action="/new")
-  
+    div.form-group
+      label(for="fixtureId") fixtureId
+      input(type="text" name="fixtureId")#fixtureId
+    div.form-group
+      label(for="fixtureDate") fixtureDate
+      input(type="text" name="fixtureDate")#fixtureDate
+    div.form-group
+      label(for="fixtureSort") fixtureSort
+      input(type="text" name="fixtureSort")#fixtureSort
+    div.form-group
+      label(for="homeTeam") homeTeam
+      input(type="text" name="homeTeam")#homeTeam
+    div.form-group
+      label(for="awayTeam") awayTeam
+      input(type="text" name="awayTeam")#awayTeam
