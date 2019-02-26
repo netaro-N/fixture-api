@@ -5,7 +5,10 @@ block content
   form(method="post", action="/new")
     div.form-group
       label(for="fixtureId") fixtureId
-      input(type="text" name="fixtureId")#fixtureId
+      input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId
+      datalist(id="ID")
+        option(value="La")
+        option(value="CD")
     div.form-group
       label(for="fixtureDate") fixtureDate
       input(type="text" name="fixtureDate")#fixtureDate
