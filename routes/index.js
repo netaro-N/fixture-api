@@ -53,7 +53,7 @@ router.get('/:fixtureId', function(req, res, next) {
          fixture: fixture 
       });
     }else {
-      const err = new Error('指定された予定は見つかりません');
+      const err = new Error('指定された試合は見つかりません');
       err.status = 404;
       next(err);
     }
