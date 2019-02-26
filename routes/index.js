@@ -36,8 +36,19 @@ router.get('/', function(req, res, next) {
       next(err);
     }
   })
-
 });
+
+router.get('/new', function(req, res, next) {
+  res.render('new', {
+           title: '新規作成ページ'
+        });
+  });
+
+router.get('/edit', function(req, res, next) {
+  res.render('edit', {
+           title: '編集ページ'
+        });
+  });
 
 router.get('/:fixtureId', function(req, res, next) {
   console.log(req.params.fixtureId);
@@ -130,6 +141,7 @@ router.post('/1234', (req, res, next) => {
   res.json({ status: 'OK', Parse:Parse });
   console.log('サーバーサイドおK');
 });
+
 
 
 module.exports = router;
