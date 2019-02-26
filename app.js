@@ -10,6 +10,7 @@ var Fixture = require('./models/fixture');
 Fixture.sync();
 
 var indexRouter = require('./routes/index');
+var neweditRouter = require('./routes/newEdit');
 
 var app = express();
 app.use(helmet());
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', neweditRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

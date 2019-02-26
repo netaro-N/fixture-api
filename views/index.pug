@@ -7,6 +7,13 @@ block content
     button#csv-parse-button csvファイルをデータベースに保存する
     p
   div
+    table(border="4" style="font-size: 20px;")
+        tr
+          td 
+            a(href="/new") 新しい予定
+          td
+            a(href="/edit") 予定の編集
+  div
     table(border="1" style="font-size: 20px;")
       tr
         th fixtureId : #{fixture.fixtureId}
