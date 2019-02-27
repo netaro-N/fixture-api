@@ -15,12 +15,15 @@ block content
       input(type="datetime-local" name="fixtureDate")#fixtureDate
     div.form-group
       label(for="fixtureSort") fixtureSort
-      input(type="text" name="fixtureSort")#fixtureSort
+      input(type="text" name="fixtureSort" autocomplete="on" list="SORT")#fixtureSort
+      datalist(id="SORT")
     div.form-group
       label(for="homeTeam") homeTeam
-      input(type="text" name="homeTeam")#homeTeam
+      input(type="text" name="homeTeam" autocomplete="on" list="HORM")#homeTeam
+      datalist(id="HORM")
     div.form-group
       label(for="awayTeam") awayTeam
-      input(type="text" name="awayTeam")#awayTeam
+      input(type="text" name="awayTeam" autocomplete="on" list="AWAY")#awayTeam
+      datalist(id="AWAY")
     div
       button(type="submit") 日程を作成する
