@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/new', (req, res, next) => {
-  console.log(req.body); // TODO 予定と候補を保存する実装をする
+  const fixtureDate = new Date(req.body.fixtureDate);
+  console.log(fixtureDate);
+  console.log(req.body);
   res.redirect('/new');
 });
 
