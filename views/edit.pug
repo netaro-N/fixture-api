@@ -7,9 +7,8 @@ block content
       label(for="fixtureId") fixtureId
       input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId
       datalist(id="ID")
-        option(value="Lali")
-        option(value="Copa")
-        option(value="CL")
+        each id in ID
+          option(value=`${id}`)
     div.form-group
       label(for="fixtureDate") fixtureDate
       input(type="datetime-local" name="fixtureDate")#fixtureDate

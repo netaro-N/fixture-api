@@ -45,9 +45,18 @@ router.get('/new', function(req, res, next) {
   });
 
 router.get('/edit', function(req, res, next) {
-  res.render('edit', {
-           title: '編集ページ'
-        });
+  Fixture.findAll({
+    order: [['"fixtureId"', 'ASC']]
+  }).then((fixture) => {
+    const ID = [];
+    fixture.forEach((f) => {
+      ID.push(f.fixtureId);
+    });
+    res.render('edit', {
+      title: '編集ページ',
+      ID: ID
+   });
+  });
   });
 
 router.get('/:fixtureId', function(req, res, next) {
