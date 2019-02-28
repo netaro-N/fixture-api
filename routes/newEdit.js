@@ -6,6 +6,8 @@ const Op = Sequelize.Op;
 const Fixture = require('../models/fixture');
 
 router.post('/new', (req, res, next) => {
+  // req.body.fixtureIdから、Fixtureデータモデルの該当IDを取得して、その.lengthを調べる
+
   const fixtureDate = new Date(req.body.fixtureDate);
   const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
   console.log(fixtureDate + "→" + formattedDate);
