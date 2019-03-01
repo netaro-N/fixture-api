@@ -18,5 +18,6 @@
   - [x] new.pugのoptionをコツコツと
   - [x] データ取得
   - [x] fixtureIdの.lengthを取得できるか？
+  
 - [ ] edit.pug , edit.js!!
     - [ ] updateの方法を練る！！
