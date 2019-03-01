@@ -12,13 +12,16 @@ router.post('/new', (req, res, next) => {
       fixtureId: { [Op.like]: req.body.fixtureId+'%'} // fixtureDate <= japanTimeplus2
     }
   }).then((id) =>{
-    console.log(id.length);
-  })
-  const fixtureDate = new Date(req.body.fixtureDate);
-  const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
-  console.log(fixtureDate + "→" + formattedDate);
-  console.log(req.body);
-  res.redirect('/new');
+    //fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
+    console.log("fixtureId=" + req.body.fixtureId + (id.length+1) );
+    const fixtureDate = new Date(req.body.fixtureDate);
+    const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
+    console.log(fixtureDate + "→" + formattedDate);
+    console.log("fixtureSort=" + req.body.fixtureSort);
+    console.log("home&away=" + req.body.homeTeam + req.body.awayTeam);
+    console.log("score=" + req.body.homeScore +" - " + req.body.awayScore);
+    res.redirect('/new');
+  });
 });
 
 router.post('/edit', (req, res, next) => {
