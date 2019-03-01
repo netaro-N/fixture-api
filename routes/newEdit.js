@@ -20,6 +20,15 @@ router.post('/new', (req, res, next) => {
     console.log("fixtureSort=" + req.body.fixtureSort);
     console.log("home&away=" + req.body.homeTeam + req.body.awayTeam);
     console.log("score=" + req.body.homeScore +" - " + req.body.awayScore);
+    Fixture.upsert({
+      fixtureId: req.body.fixtureId + (id.length+1),
+      fixtureDate: formattedDate,
+      fixtureSort: req.body.fixtureSort,
+      homeTeam: req.body.homeTeam,
+      awayTeam: req.body.awayTeam,
+      homeScore: '',
+      awayScore: ''
+    });
     res.redirect('/new');
   });
 });
