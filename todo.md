@@ -14,7 +14,9 @@
 
 - [x] 次の試合、前の試合を表示させる
 
-- [ ] new.js , new.pug!
+- [x] new.js , new.pug!
   - [x] new.pugのoptionをコツコツと
   - [x] データ取得
-  - [ ] fixtureIdの.lengthを取得できるか？
+  - [x] fixtureIdの.lengthを取得できるか？
+- [ ] edit.pug , edit.js!!
+    - [ ] updateの方法を練る！！
