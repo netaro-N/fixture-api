@@ -5,7 +5,7 @@ block content
   form(method="post", action="/:fixtureId/edit")
     div.form-group
       label(for="fixtureDate") fixtureDate
-      input(type="datetime-local" name="fixtureDate" value=fixture.fixtureDate)#fixtureDate
+      input(type="datetime-local" name="fixtureDate" value=fixture.formattedDate)#fixtureDate
     div.form-group
       label(for="fixtureSort") fixtureSort
       input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT" value=fixture.fixtureSort)#fixtureSort
