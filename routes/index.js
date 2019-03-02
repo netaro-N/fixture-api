@@ -26,10 +26,19 @@ router.get('/', function(req, res, next) {
   }).then((fixture) => {
     if (fixture) {
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
+      Fixture.findAll({
+        order: [['"fixtureId"', 'ASC']]
+      }).then((fixtures) => {
+        const ID = [];
+        fixtures.forEach((f) => {
+          ID.push(f.fixtureId);
+        });
       res.render('index', {
          title: 'こちらはトップページです',
-         fixture: fixture 
+         fixture: fixture,
+         ID : ID
       });
+    });
     }else {
       const err = new Error('指定された予定は見つかりません');
       err.status = 404;
@@ -44,19 +53,10 @@ router.get('/new', function(req, res, next) {
         });
   });
 
-router.get('/edit', function(req, res, next) {
-  Fixture.findAll({
-    order: [['"fixtureId"', 'ASC']]
-  }).then((fixture) => {
-    const ID = [];
-    fixture.forEach((f) => {
-      ID.push(f.fixtureId);
-    });
+router.get('/:fixtureId/edit', function(req, res, next) {
     res.render('edit', {
-      title: '編集ページ',
-      ID: ID
+      title: '編集ページ'
    });
-  });
   });
 
 router.get('/:fixtureId', function(req, res, next) {

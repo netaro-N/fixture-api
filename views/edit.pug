@@ -4,12 +4,6 @@ block content
   h3= title
   form(method="post", action="/edit")
     div.form-group
-      label(for="fixtureId") fixtureId
-      input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId
-      datalist(id="ID")
-        each id in ID
-          option(value=`${id}`)
-    div.form-group
       label(for="fixtureDate") fixtureDate
       input(type="datetime-local" name="fixtureDate")#fixtureDate
     div.form-group
