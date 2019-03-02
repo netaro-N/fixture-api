@@ -65,7 +65,7 @@ router.get('/:fixtureId/edit', function(req, res, next) {
   }).then((fixture) => {
     if (fixture) {
       //YYYY-MM-DDThh:mm:ss
-      fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY-MM-DDThh:mm:ss');
+      fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY-MM-DDTHH:mm');
 console.log(fixture.formattedDate);
       res.render('edit', {
         title: '編集ページ',
