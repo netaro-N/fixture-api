@@ -53,6 +53,10 @@ router.get('/new', function(req, res, next) {
         });
   });
 
+  router.post('/edit', function(req, res, next) {
+    res.redirect(`/${req.body.fixtureId}/edit`);
+    });
+
 router.get('/:fixtureId/edit', function(req, res, next) {
     res.render('edit', {
       title: '編集ページ'

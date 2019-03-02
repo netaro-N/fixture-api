@@ -11,7 +11,7 @@ block content
       tr
         td 
           a(href="/new") 新しい予定
-  form(method="get", action=`/${id}/edit`)
+  form(method="post", action="/edit")
     div.form-group
       label(for="fixtureId") fixtureId
       input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId
