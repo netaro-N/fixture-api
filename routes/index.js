@@ -58,9 +58,22 @@ router.get('/new', function(req, res, next) {
     });
 
 router.get('/:fixtureId/edit', function(req, res, next) {
-    res.render('edit', {
-      title: '編集ページ'
-   });
+  Fixture.findOne({
+    where: {
+      fixtureId: req.params.fixtureId
+    }
+  }).then((fixture) => {
+    if (fixture) {
+      res.render('edit', {
+        title: '編集ページ',
+        fixture:fixture
+     });
+    }else {
+      const err = new Error('試合が無いので編集できません');
+      err.status = 404;
+      next(err);
+    }
+  });
   });
 
 router.get('/:fixtureId', function(req, res, next) {
