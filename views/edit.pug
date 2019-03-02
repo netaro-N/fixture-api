@@ -2,20 +2,20 @@ extends layout
 
 block content
   h3= title
-  form(method="post", action="/edit")
+  form(method="post", action="/:fixtureId/edit")
     div.form-group
       label(for="fixtureDate") fixtureDate
-      input(type="datetime-local" name="fixtureDate")#fixtureDate
+      input(type="datetime-local" name="fixtureDate" value=fixture.fixtureDate)#fixtureDate
     div.form-group
       label(for="fixtureSort") fixtureSort
-      input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT")#fixtureSort
+      input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT" value=fixture.fixtureSort)#fixtureSort
       datalist(id="SORT")
         option(value="ラ・リーガ第")
         option(value="チャンピオンズリーグ")
         option(value="国王杯")
     div.form-group
       label(for="homeTeam") homeTeam
-      input(type="text" name="homeTeam" autocomplete="on" list="HORM")#homeTeam
+      input(type="text" name="homeTeam" autocomplete="on" list="HORM" value=fixture.homeTeam)#homeTeam
       datalist(id="HORM")
         option(value="Ajax")
         option(value="Athletic Club")
@@ -44,7 +44,7 @@ block content
         option(value="Villarreal CF")
     div.form-group
       label(for="awayTeam") awayTeam
-      input(type="text" name="awayTeam" autocomplete="on" list="AWAY")#awayTeam
+      input(type="text" name="awayTeam" autocomplete="on" list="AWAY" value=fixture.awayTeam)#awayTeam
       datalist(id="AWAY")
         option(value="Ajax")
         option(value="Athletic Club")
@@ -71,5 +71,11 @@ block content
         option(value="Sevilla FC")
         option(value="Valencia CF")
         option(value="Villarreal CF")
+    div.form-group
+      label(for="homeScore") homeScore
+      input(type="text" name="homeScore" value=fixture.homeScore)#homeScore
+    div.form-group
+      label(for="awayScore") awayScore
+      input(type="text" name="awayScore" value=fixture.awayScore)#awayScore
     div
       button(type="submit") 日程を編集する

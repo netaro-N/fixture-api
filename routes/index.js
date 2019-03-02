@@ -64,6 +64,7 @@ router.get('/:fixtureId/edit', function(req, res, next) {
     }
   }).then((fixture) => {
     if (fixture) {
+      console.log(fixture.fixtureDate);
       res.render('edit', {
         title: '編集ページ',
         fixture:fixture
