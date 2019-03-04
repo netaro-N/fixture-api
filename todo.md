@@ -20,4 +20,5 @@
   - [x] fixtureIdの.lengthを取得できるか？
   
 - [ ] edit.pug , edit.js!!
-    - [ ] updateの方法を練る！！
+    - [x] updateの方法を練る！！
+    - [ ] update実装

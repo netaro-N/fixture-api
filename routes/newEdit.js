@@ -34,6 +34,9 @@ router.post('/:fixtureId/edit', (req, res, next) => {
   const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
   console.log(fixtureDate + "→" + formattedDate);
   console.log(req.body);
-  res.redirect('/edit');
+  //①保存データの確認
+  
+  // ②保存する
+  res.redirect('/:fixtureId');
 });
 module.exports = router;
