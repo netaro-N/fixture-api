@@ -2,7 +2,7 @@ extends layout
 
 block content
   h3= title
-  form(method="post", action="/:fixtureId/edit")
+  form(method="post", action=`/${fixture.fixtureId}/edit`)
     div.form-group
       label(for="fixtureDate") fixtureDate
       input(type="datetime-local" name="fixtureDate" value=fixture.formattedDate)#fixtureDate
