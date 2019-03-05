@@ -42,9 +42,29 @@ router.post('/:fixtureId/edit', (req, res, next) => {
   console.log(req.body.awayTeam);
   console.log(req.body.homeScore);
   console.log(req.body.awayScore);
-  
-
   // ②保存する
-  res.redirect(`/${ID}`);
+  Fixture.findOne({
+    where: {
+      fixtureId: req.params.fixtureId
+    }
+  }).then((f) => {
+    if (f){
+    Fixture.update({
+      fixtureId: f.fixtureId,
+      fixtureDate: formattedDate,
+      fixtureSort: req.body.fixtureSort,
+      homeTeam: req.body.homeTeam,
+      awayTeam: req.body.awayTeam,
+      homeScore: req.body.homeScore,
+      awayScore: req.body.awayScore
+    }).then((fixture) => {
+      res.redirect('/'+ fixture.fixtureId);
+    });
+  } else {
+    const err = new Error('指定された予定がありません');
+    err.status = 404;
+    next(err);
+  }
+  });
 });
 module.exports = router;
