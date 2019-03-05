@@ -19,6 +19,6 @@
   - [x] データ取得
   - [x] fixtureIdの.lengthを取得できるか？
   
-- [ ] edit.pug , edit.js!!
+- [x] edit.pug , edit.js!!
     - [x] updateの方法を練る！！
-    - [ ] update実装
+    - [x] update実装
