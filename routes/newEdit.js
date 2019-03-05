@@ -49,7 +49,7 @@ router.post('/:fixtureId/edit', (req, res, next) => {
     }
   }).then((f) => {
     if (f){
-    Fixture.update({
+    f.update({
       fixtureId: f.fixtureId,
       fixtureDate: formattedDate,
       fixtureSort: req.body.fixtureSort,
