@@ -53,6 +53,12 @@ router.get('/new', function(req, res, next) {
         });
   });
 
+router.get('/list', function(req, res, next) {
+  res.render('matchlist', {
+           title: '試合一覧ページ'
+        });
+  });
+
   router.post('/edit', function(req, res, next) {
     res.redirect(`/${req.body.fixtureId}/edit`);
     });
