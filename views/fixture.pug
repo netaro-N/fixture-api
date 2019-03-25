@@ -3,6 +3,8 @@ extends layout
 block content
   p #{title}
   div
+    a(href=`${fixture.fixtureId}/edit`) この予定を編集する
+  div
     table(border="1" style="font-size: 20px;")
       tr
         th fixtureId : #{fixture.fixtureId}
