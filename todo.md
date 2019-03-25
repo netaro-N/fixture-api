@@ -22,3 +22,9 @@
 - [x] edit.pug , edit.js!!
     - [x] updateの方法を練る！！
     - [x] update実装
+
+- [ ] 試合一覧表示
+
+- [ ] Err分け
+
+- [ ] デザイン改善
