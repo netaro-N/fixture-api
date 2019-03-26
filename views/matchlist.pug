@@ -9,6 +9,6 @@ block content
         th #{f.formattedDate}
         td #{f.fixtureSort}
         td #{f.homeTeam}
-        td #{f.homeScore}
-        td #{f.awayScore}
+        td
+          a(href=`/${f.fixtureId}`) #{f.homeScore} - #{f.awayScore}
         td #{f.awayTeam}
