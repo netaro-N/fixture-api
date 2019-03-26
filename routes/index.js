@@ -54,9 +54,17 @@ router.get('/new', function(req, res, next) {
   });
 
 router.get('/list', function(req, res, next) {
-  res.render('matchlist', {
-           title: '試合一覧ページ'
-        });
+  Fixture.findAll({
+    order: [['"fixtureDate"', 'ASC']]
+  }).then((fixtures) => {
+    fixtures.forEach((f) => {
+      f.formattedDate = moment(f.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
+    });
+    res.render('matchlist', {
+      title: '試合一覧ページ',
+      fixtures: fixtures
+   });
+  });
   });
 
   router.post('/edit', function(req, res, next) {

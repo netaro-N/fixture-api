@@ -3,3 +3,7 @@ extends layout
 block content
   h1= title
   p こちらは #{title}です
+  table
+    each f in fixtures
+      tr
+        th #{f.formattedDate}
