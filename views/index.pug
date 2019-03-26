@@ -26,7 +26,8 @@ block content
   div
     table(border="1" style="font-size: 20px;")
       tr
-        th fixtureId : #{fixture.fixtureId}
+        th fixtureId : 
+          a(href=`/${fixture.fixtureId}`) #{fixture.fixtureId}
         td fixtureSort : #{fixture.fixtureSort}
       tr
         td(colspan="2") fixtureDate : #{fixture.formattedDate}
