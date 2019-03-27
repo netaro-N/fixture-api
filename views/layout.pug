@@ -9,8 +9,9 @@ html
         a(href="/").navbar-brand.nav-link
           div.d-inline-block FixtureAPI
       ul.navbar-nav
-        if user
           li.nav-item
-            a(href="/logout").nav-link #{user.username} をログアウト
+            a(href="/").nav-link チーム情報板
+          li.nav-item
+            a(href="/").nav-link 移籍情報板
     block content
     script(src="/javascripts/bundle.js")

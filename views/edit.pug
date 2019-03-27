@@ -2,6 +2,7 @@ extends layout
 
 block content
   h3= title
+  a(href=`/${fixture.fixtureId}`) 予定に戻る
   form(method="post", action=`/${fixture.fixtureId}/edit`)
     div.form-group
       label(for="fixtureDate") fixtureDate
