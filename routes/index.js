@@ -43,8 +43,8 @@ router.get('/', function(req, res, next) {
       const err = new Error('指定された予定は見つかりません');
       err.status = 404;
       next(err);
-    }
-  })
+    };
+  });
 });
 
 router.get('/new', function(req, res, next) {
@@ -57,6 +57,7 @@ router.get('/list', function(req, res, next) {
   Fixture.findAll({
     order: [['"fixtureDate"', 'ASC']]
   }).then((fixtures) => {
+    if (fixtures) {
     fixtures.forEach((f) => {
       f.formattedDate = moment(f.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
     });
@@ -64,6 +65,11 @@ router.get('/list', function(req, res, next) {
       title: '試合一覧ページ',
       fixtures: fixtures
    });
+  }else {
+    const err = new Error('試合一覧がございません。申し訳ございません。');
+      err.status = 404;
+      next(err);
+  };
   });
   });
 
