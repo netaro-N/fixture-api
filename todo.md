@@ -33,8 +33,8 @@
     - [x] サブチャンネル「移籍情報、チーム情報、etc...」などにする
 
 - [ ] Err分け
-    - [ ] get時のerr処理
-    - [ ] post時のerr処理
+    - [x] get時のerr処理
+    - [ ] post時のerr処理 : [newEdit.js] post('/:fixtureId/edit') → post('/:fixtureId') if(f){ if(edit){}else(delete){} }else{予定ありません}
 
 - [ ] デザイン改善
 
