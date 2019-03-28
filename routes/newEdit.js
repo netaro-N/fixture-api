@@ -7,16 +7,16 @@ const Fixture = require('../models/fixture');
 
 router.post('/new', (req, res, next) => {
   // req.body.fixtureIdから、Fixtureデータモデルの該当IDを取得して、その.lengthを調べる
-  Fixture.findAll( {
-    where : {
-      fixtureId: { [Op.like]: req.body.fixtureId+'%'} // fixtureDate <= japanTimeplus2
+  Fixture.findAll({
+    where: {
+      fixtureId: { [Op.like]: req.body.fixtureId + '%' } // fixtureDate <= japanTimeplus2
     }
-  }).then((id) =>{
+  }).then((id) => {
     //fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
     const fixtureDate = new Date(req.body.fixtureDate);
     const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
     Fixture.upsert({
-      fixtureId: req.body.fixtureId + (id.length+1),
+      fixtureId: req.body.fixtureId + (id.length + 1),
       fixtureDate: formattedDate,
       fixtureSort: req.body.fixtureSort,
       homeTeam: req.body.homeTeam,
@@ -48,23 +48,23 @@ router.post('/:fixtureId/edit', (req, res, next) => {
       fixtureId: req.params.fixtureId
     }
   }).then((f) => {
-    if (f){
-    f.update({
-      fixtureId: f.fixtureId,
-      fixtureDate: formattedDate,
-      fixtureSort: req.body.fixtureSort,
-      homeTeam: req.body.homeTeam,
-      awayTeam: req.body.awayTeam,
-      homeScore: req.body.homeScore,
-      awayScore: req.body.awayScore
-    }).then((fixture) => {
-      res.redirect('/'+ fixture.fixtureId);
-    });
-  } else {
-    const err = new Error('指定された予定がありません');
-    err.status = 404;
-    next(err);
-  }
+    if (f) {
+      f.update({
+        fixtureId: f.fixtureId,
+        fixtureDate: formattedDate,
+        fixtureSort: req.body.fixtureSort,
+        homeTeam: req.body.homeTeam,
+        awayTeam: req.body.awayTeam,
+        homeScore: req.body.homeScore,
+        awayScore: req.body.awayScore
+      }).then((fixture) => {
+        res.redirect('/' + fixture.fixtureId);
+      });
+    } else {
+      const err = new Error('指定された予定がありません');
+      err.status = 404;
+      next(err);
+    }
   });
 });
 module.exports = router;

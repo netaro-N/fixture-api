@@ -13,14 +13,14 @@ moment.locale('ja', {
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   const nowTime = new Date();
   nowTime.setHours(nowTime.getHours() + 2);
   const japanTimeplus2 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm"); // OK!!
   console.log(new Date(japanTimeplus2));
-  Fixture.findOne( {
-    where : {
-      fixtureDate: { [Op.lte]:new Date(japanTimeplus2) } // fixtureDate <= japanTimeplus2
+  Fixture.findOne({
+    where: {
+      fixtureDate: { [Op.lte]: new Date(japanTimeplus2) } // fixtureDate <= japanTimeplus2
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
@@ -33,13 +33,13 @@ router.get('/', function(req, res, next) {
         fixtures.forEach((f) => {
           ID.push(f.fixtureId);
         });
-      res.render('index', {
-         title: 'こちらはトップページです',
-         fixture: fixture,
-         ID : ID
+        res.render('index', {
+          title: 'こちらはトップページです',
+          fixture: fixture,
+          ID: ID
+        });
       });
-    });
-    }else {
+    } else {
       const err = new Error('指定された予定は見つかりません');
       err.status = 404;
       next(err);
@@ -47,37 +47,37 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/new', function(req, res, next) {
+router.get('/new', function (req, res, next) {
   res.render('new', {
-           title: '新規作成ページ'
-        });
+    title: '新規作成ページ'
   });
+});
 
-router.get('/list', function(req, res, next) {
+router.get('/list', function (req, res, next) {
   Fixture.findAll({
     order: [['"fixtureDate"', 'ASC']]
   }).then((fixtures) => {
     if (fixtures) {
-    fixtures.forEach((f) => {
-      f.formattedDate = moment(f.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
-    });
-    res.render('matchlist', {
-      title: '試合一覧ページ',
-      fixtures: fixtures
-   });
-  }else {
-    const err = new Error('試合一覧がございません。申し訳ございません。');
+      fixtures.forEach((f) => {
+        f.formattedDate = moment(f.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
+      });
+      res.render('matchlist', {
+        title: '試合一覧ページ',
+        fixtures: fixtures
+      });
+    } else {
+      const err = new Error('試合一覧がございません。申し訳ございません。');
       err.status = 404;
       next(err);
-  };
+    };
   });
-  });
+});
 
-  router.post('/edit', function(req, res, next) {
-    res.redirect(`/${req.body.fixtureId}/edit`);
-    });
+router.post('/edit', function (req, res, next) {
+  res.redirect(`/${req.body.fixtureId}/edit`);
+});
 
-router.get('/:fixtureId/edit', function(req, res, next) {
+router.get('/:fixtureId/edit', function (req, res, next) {
   Fixture.findOne({
     where: {
       fixtureId: req.params.fixtureId
@@ -86,20 +86,20 @@ router.get('/:fixtureId/edit', function(req, res, next) {
     if (fixture) {
       //YYYY-MM-DDThh:mm:ss
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY-MM-DDTHH:mm');
-console.log(fixture.formattedDate);
+      console.log(fixture.formattedDate);
       res.render('edit', {
         title: '編集ページ',
-        fixture:fixture
-     });
-    }else {
+        fixture: fixture
+      });
+    } else {
       const err = new Error('試合が無いので編集できません');
       err.status = 404;
       next(err);
     }
   });
-  });
+});
 
-router.get('/:fixtureId', function(req, res, next) {
+router.get('/:fixtureId', function (req, res, next) {
   console.log(req.params.fixtureId);
   Fixture.findOne({
     where: {
@@ -109,10 +109,10 @@ router.get('/:fixtureId', function(req, res, next) {
     if (fixture) {
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       res.render('fixture', {
-         title: 'こちらは個別ページです',
-         fixture: fixture 
+        title: 'こちらは個別ページです',
+        fixture: fixture
       });
-    }else {
+    } else {
       const err = new Error('指定された試合は見つかりません');
       err.status = 404;
       next(err);
@@ -125,13 +125,13 @@ router.get('/:fixtureDate/last', (req, res, next) => {
   console.log(originDate);
   Fixture.findOne({
     where: {
-      fixtureDate: { [Op.lt]:originDate }
+      fixtureDate: { [Op.lt]: originDate }
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
     if (fixture) {
       res.redirect(`/${fixture.fixtureId}`);
-    }else {
+    } else {
       const err = new Error('これより前の試合はありません');
       err.status = 404;
       next(err);
@@ -144,13 +144,13 @@ router.get('/:fixtureDate/next', (req, res, next) => {
   console.log(originDate);
   Fixture.findOne({
     where: {
-      fixtureDate: { [Op.gt]:originDate }
+      fixtureDate: { [Op.gt]: originDate }
     },
     order: [['"fixtureDate"', 'ASC']]
   }).then((fixture) => {
     if (fixture) {
       res.redirect(`/${fixture.fixtureId}`);
-    }else {
+    } else {
       const err = new Error('これより後の試合はありません');
       err.status = 404;
       next(err);
@@ -162,17 +162,17 @@ router.post('/1234', (req, res, next) => {
   const file = 'real18-19.csv';
   let data = fs.readFileSync(file);
   let Parse = csvParse(data, {
-    delimiter: ',', 
-    rowDelimiter: 'auto', 
-    quote: '"', 
-    escape: '"', 
-    columns: true, 
-    comment: '#', 
-    skip_empty_line: true, 
+    delimiter: ',',
+    rowDelimiter: 'auto',
+    quote: '"',
+    escape: '"',
+    columns: true,
+    comment: '#',
+    skip_empty_line: true,
     trim: false
   });
-  Parse.forEach((f,i) =>{
-    f.formattedDate = moment(f.fixtureDate,'DD/MM/YYYY HH:mm').add(8, 'hours').format("YYYY/MM/DD HH:mm");
+  Parse.forEach((f, i) => {
+    f.formattedDate = moment(f.fixtureDate, 'DD/MM/YYYY HH:mm').add(8, 'hours').format("YYYY/MM/DD HH:mm");
     console.log(f.fixtureDate + ' → ' + f.formattedDate);
 
     // fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
@@ -187,7 +187,7 @@ router.post('/1234', (req, res, next) => {
     });
 
   });
-  res.json({ status: 'OK', Parse:Parse });
+  res.json({ status: 'OK', Parse: Parse });
   console.log('サーバーサイドおK');
 });
 
