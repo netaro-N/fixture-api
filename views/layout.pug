@@ -10,37 +10,17 @@ html
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
     crossorigin="anonymous")
   body
-    //-
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      a.navbar-brand(href='#') Smart City
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.rounded-bottom
+      a(href="/").navbar-brand.nav-link 
+        div.d-inline-block FixtureAPI
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー")
         span.navbar-toggler-icon
-      div.collapse.navbar-collapse(id='navbarSupportedContent')
-        ul.navbar-nav.mr-auto
-          li.nav-item.active
-            a.nav-link(href='#') Home
+      div.collapse.navbar-collapse(id='Navbar')
+        ul.navbar-nav.ml-auto.mt-2.mt-lg-0
           li.nav-item
-            a.nav-link(href='/food-courts') Food Courts
-        ul.navbar-nav.float-right
+            a(href="/").nav-link チーム情報板
           li.nav-item
-            a.nav-link(href='/login') Login
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(id='navbarDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Accounts
-            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-              a.dropdown-item(href='#') Settings
-
-    //-
-      nav.navbar.navbar-expand-lg.navbar-light.bg-light.rounded-bottom
-        a(href="/").navbar-brand.nav-link 
-          div.d-inline-block FixtureAPI
-        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー")
-          span.navbar-toggler-icon
-        div.collapse.navbar-collapse(id='Navbar')
-          ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-            li.nav-item
-              a(href="/").nav-link チーム情報板
-            li.nav-item
-              a(href="/").nav-link 移籍情報板
+            a(href="/").nav-link 移籍情報板
     div.container
       block content
     script(src="/javascripts/bundle.js")
