@@ -2,16 +2,45 @@ doctype html
 html
   head
     title FixtureAPI 
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet",
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
+    crossorigin="anonymous")
   body
-    nav.navbar.navbar-light.bg-light
-      div.navbar-header
-        a(href="/").navbar-brand.nav-link
+    //-
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='#') Smart City
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      div.collapse.navbar-collapse(id='navbarSupportedContent')
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='#') Home
+          li.nav-item
+            a.nav-link(href='/food-courts') Food Courts
+        ul.navbar-nav.float-right
+          li.nav-item
+            a.nav-link(href='/login') Login
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(id='navbarDropdownMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Accounts
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Settings
+
+    //-
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light.rounded-bottom
+        a(href="/").navbar-brand.nav-link 
           div.d-inline-block FixtureAPI
-      ul.navbar-nav
-          li.nav-item
-            a(href="/").nav-link チーム情報板
-          li.nav-item
-            a(href="/").nav-link 移籍情報板
-    block content
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー")
+          span.navbar-toggler-icon
+        div.collapse.navbar-collapse(id='Navbar')
+          ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+            li.nav-item
+              a(href="/").nav-link チーム情報板
+            li.nav-item
+              a(href="/").nav-link 移籍情報板
+    div.container
+      block content
     script(src="/javascripts/bundle.js")
