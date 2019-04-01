@@ -37,6 +37,10 @@
     - [ ] post時のerr処理 : [newEdit.js] post('/:fixtureId/edit') → post('/:fixtureId') if(f){ if(edit){}else(delete){} }else{予定ありません}
 
 - [ ] デザイン改善
+    - [ ]トップページ
+        - [ ] nav-bar
+        - [ ] sidemenu
+        - [ ] contents
 
 - [ ] コード印刷と理解、復習
 
