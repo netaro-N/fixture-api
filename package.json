@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "cookie-parser": "~1.4.3",
     "csv-parse": "^4.3.3",
     "debug": "~2.6.9",
@@ -17,6 +18,7 @@
     "morgan": "~1.9.0",
     "pg": "^7.8.1",
     "pg-hstore": "^2.3.2",
+    "popper.js": "^1.14.7",
     "pug": "^2.0.3",
     "sequelize": "^4.42.0"
   },

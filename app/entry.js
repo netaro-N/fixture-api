@@ -1,5 +1,8 @@
 'use strict';
 import $ from 'jQuery';
+const global = Function('return this;')();
+global.jQuery = $;
+import bootstrap from 'bootstrap';
 
 const buttonCsvParse = $('#csv-parse-button');
 buttonCsvParse.click(() => {
