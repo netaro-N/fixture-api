@@ -38,7 +38,7 @@
 
 - [ ] デザイン改善
     - [ ]トップページ
-        - [ ] nav-bar
+        - [x] nav-bar
         - [ ] sidemenu
         - [ ] contents
 
