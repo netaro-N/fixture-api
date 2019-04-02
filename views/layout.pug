@@ -24,7 +24,17 @@ html
             a(href="/").nav-link ログイン
     div.container-fluid
       div.row.flex-xl-nowrap
-        div.col-12.col-md-3.align-self-start サイドメニュー
+        div.col-12.col-md-3.align-self-start#sidemenu
+          ul
+            li
+              a(href="/") サイドメニュー
+              ul
+                li 
+                  a(href="/list") 試合一覧ページ
+                li
+                  a(href="/") チーム情報板
+                li
+                  a(href="/") 移籍情報板
         div.col-12.col-md-9.py-md-3.pl-md-5
           block content
     script(src="/javascripts/bundle.js")
