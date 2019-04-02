@@ -39,8 +39,9 @@
 - [ ] デザイン改善
     - [ ]トップページ
         - [x] nav-bar
-        - [ ] sidemenu
+        - [x] sidemenu
         - [ ] contents
+    - [ ]
 
 - [ ] コード印刷と理解、復習
 
