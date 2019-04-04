@@ -53,6 +53,12 @@ router.get('/new', function (req, res, next) {
   });
 });
 
+router.get('/manage', function (req, res, next) {
+  res.render('manage', {
+    title: '管理人ページ'
+  });
+});
+
 router.get('/list', function (req, res, next) {
   Fixture.findAll({
     order: [['"fixtureDate"', 'ASC']]
