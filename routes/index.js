@@ -26,21 +26,12 @@ router.get('/', function (req, res, next) {
   }).then((fixture) => {
     if (fixture) {
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
-      Fixture.findAll({
-        order: [['"fixtureId"', 'ASC']]
-      }).then((fixtures) => {
-        const ID = [];
-        fixtures.forEach((f) => {
-          ID.push(f.fixtureId);
-        });
         res.render('index', {
           title: 'こちらはトップページです',
-          fixture: fixture,
-          ID: ID
+          fixture: fixture
         });
-      });
     } else {
-      const err = new Error('指定された予定は見つかりません');
+      const err = new Error('表示できる試合がございません。');
       err.status = 404;
       next(err);
     };

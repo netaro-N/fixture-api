@@ -14,7 +14,7 @@ block content
   form(method="post", action="/edit")
     div.form-group
       label(for="fixtureId") fixtureId
-      input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId
+      input(type="text" name="fixtureId" autocomplete="on" list="ID" required)#fixtureId
       datalist(id="ID")
         each id in ID
           option(value=`${id}`)
