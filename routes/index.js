@@ -54,8 +54,17 @@ router.get('/new', function (req, res, next) {
 });
 
 router.get('/manage', function (req, res, next) {
-  res.render('manage', {
-    title: '管理人ページ'
+  Fixture.findAll({
+    order: [['"fixtureId"', 'ASC']]
+  }).then((fixtures) => {
+    const ID = [];
+    fixtures.forEach((f) => {
+      ID.push(f.fixtureId);
+    });
+    res.render('manage', {
+      title: '管理人ページ',
+      ID: ID
+    });
   });
 });
 
