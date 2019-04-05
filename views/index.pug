@@ -3,17 +3,19 @@ extends layout
 block content
   h1= title
   div.container
-    div.row.border.justify-content-center
-      div.col-6.col-sm-2.order-sm-1.border.ml-md-auto 前の試合
-      div.col-6.col-sm-2.order-sm-3.border.ml-md-auto 次の試合
-      div.col-12.col-sm-5.order-sm-2.ml-md-auto
+    div.row.border.justify-content-center.align-items-end
+      div.col-6.col-sm-2.order-sm-1.border.mr-md-3
+        a(href="/").nav-link.btn.btn-secondary 前の試合
+      div.col-6.col-sm-2.order-sm-3.border.ml-md-3 
+        a(href="/").nav-link.btn.btn-secondary 次の試合
+      div.col-12.col-sm-7.order-sm-2
         div.row.border.justify-content-center
           div.col-10.border fixtureSort
           div.w-100
           div.col-10.border キックオフ
           div.w-100
           div.col-3.border ホーム
-          div.col-6.border 1 - 2
+          div.col-5.border 1 - 2
           div.col-3.border アウェー
   p
   div
