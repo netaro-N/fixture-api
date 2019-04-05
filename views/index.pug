@@ -4,8 +4,9 @@ block content
   h1= title
   div.container
     div.row.border.justify-content-center
-      div.col-2.border.ml-md-auto 前の試合
-      div.col-5.ml-md-auto
+      div.col-6.col-sm-2.order-sm-1.border.ml-md-auto 前の試合
+      div.col-6.col-sm-2.order-sm-3.border.ml-md-auto 次の試合
+      div.col-12.col-sm-5.order-sm-2.ml-md-auto
         div.row.border.justify-content-center
           div.col-10.border fixtureSort
           div.w-100
@@ -14,7 +15,7 @@ block content
           div.col-3.border ホーム
           div.col-6.border 1 - 2
           div.col-3.border アウェー
-      div.col-2.border.ml-md-auto 次の試合
+  p
   div
     table(border="1" style="font-size: 20px;")
       tr
