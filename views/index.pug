@@ -2,7 +2,7 @@ extends layout
 
 block content
   div.container
-    div.jumbotron.my-3
+    div.jumbotron.my-1.py-2(style="font-size: 1.25em;")
       p.lead.text-center レアル・マドリード試合情報
       div.row.border.justify-content-center.align-items-end.text-center
         div.col-6.col-md-2.order-md-1.border.mr-md-3.px-0
@@ -21,33 +21,3 @@ block content
             div.col-3.border.px-0 #{fixture.homeTeam}
             div.col-5.border #{fixture.homeScore} - #{fixture.awayScore}
             div.col-3.border.px-0 #{fixture.awayTeam}
-  p
-  div
-    table(border="1" style="font-size: 20px;")
-      tr
-        th fixtureId : 
-          a(href=`/${fixture.fixtureId}`) #{fixture.fixtureId}
-        td fixtureSort : #{fixture.fixtureSort}
-      tr
-        td(colspan="2") fixtureDate : #{fixture.formattedDate}
-    p
-  div
-    table(border="2"  style="font-size: 20px;")
-      tr
-        th(colspan="2") ホーム
-        td 
-        th(colspan="2") アウェイ
-      tr
-        td #{fixture.homeTeam}
-        td #{fixture.homeScore}
-        td -
-        td #{fixture.awayScore}
-        td #{fixture.awayTeam}
-    p
-  div
-    table(border="3" style="font-size: 20px;")
-      tr
-        td 
-          a(href=`/${fixture.fixtureDate}/last`) 前の試合
-        td
-          a(href=`/${fixture.fixtureDate}/next`) 次の試合
