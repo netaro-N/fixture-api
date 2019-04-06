@@ -6,11 +6,11 @@ block content
       p.lead.text-center レアル・マドリード試合情報
       div.row.border.justify-content-center.align-items-end.text-center
         div.col-6.col-md-2.order-md-1.border.mr-md-3.px-0
-          a(href="/").btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 前の試合
-          a(href="/").btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ◀︎
+          a(href=`/${fixture.fixtureDate}/last`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 前の試合
+          a(href=`/${fixture.fixtureDate}/last`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ◀︎
         div.col-6.col-md-2.order-md-3.border.ml-md-3.px-0
-          a(href="/").btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 次の試合
-          a(href="/").btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ▶︎
+          a(href=`/${fixture.fixtureDate}/next`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 次の試合
+          a(href=`/${fixture.fixtureDate}/next`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ▶︎
         div.col-12.col-md-7.order-md-2
           div.row.border.justify-content-center
             div.col-10.border 
