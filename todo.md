@@ -37,11 +37,15 @@
     - [ ] post時のerr処理 : [newEdit.js] post('/:fixtureId/edit') → post('/:fixtureId') if(f){ if(edit){}else(delete){} }else{予定ありません}
 
 - [ ] デザイン改善
-    - [ ]トップページ
+    - [x]トップページ
         - [x] nav-bar
         - [x] sidemenu
-        - [ ] contents
-    - [ ]
+        - [x] contents
+    - [ ] fixture.pug!
+    - [ ] manage.pug管理人ページ
+        - [ ] edit.pug
+        - [ ] new.pug
+    - [ ] matchlist.pug試合一覧
 
 - [ ] コード印刷と理解、復習
 
