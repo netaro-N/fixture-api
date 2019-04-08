@@ -2,16 +2,16 @@ extends layout
 
 block content
   div.container
-    div.jumbotron.my-1.py-2(style="font-size: 1.25em;")
+    div.jumbotron.my-1.py-2
       p.lead.text-center レアル・マドリード試合情報
       div.row.justify-content-center.align-items-end.text-center
-        div.col-6.col-md-2.order-md-1.mr-md-3.px-0
+        div.col-6.col-md-1.col-lg-2.order-md-1.mr-md-3.px-0
           a(href=`/${fixture.fixtureDate}/last`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 前の試合
           a(href=`/${fixture.fixtureDate}/last`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ◀︎
-        div.col-6.col-md-2.order-md-3.ml-md-3.px-0
+        div.col-6.col-md-1.col-lg-2.order-md-3.ml-md-3.px-0
           a(href=`/${fixture.fixtureDate}/next`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 次の試合
           a(href=`/${fixture.fixtureDate}/next`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ▶︎
-        div.col-12.col-md-7.order-md-2
+        div.col-12.col-md-9.col-lg-7.order-md-2
           div.row.border.border-info.rounded.justify-content-center
             div.col-10 
               a(href=`/${fixture.fixtureId}`) #{fixture.fixtureSort}
