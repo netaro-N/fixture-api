@@ -16,8 +16,8 @@ block content
             div.col-10 
               a(href=`/${fixture.fixtureId}`) #{fixture.fixtureSort}
             div.w-100
-            div.col-10 日本時間 : #{fixture.formattedDate}〜KO
+            div.col-10.Date 日本時間 : #{fixture.formattedDate}〜KO
             div.w-100
-            div.col-3.px-0 #{fixture.homeTeam}
-            div.col-5 #{fixture.homeScore} - #{fixture.awayScore}
-            div.col-3.px-0 #{fixture.awayTeam}
+            div.col-3.px-0.align-self-end #{fixture.homeTeam}
+            div.col-5.Score #{fixture.homeScore} - #{fixture.awayScore}
+            div.col-3.px-0.align-self-end #{fixture.awayTeam}

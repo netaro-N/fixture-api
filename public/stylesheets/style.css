@@ -16,3 +16,30 @@ li ul {
 .jumbotron {
   background-color: rgb(255, 247, 153,0.45); /*ライムライト！*/
 }
+
+/* 大デバイス（デスクトップ, 1200px 未満）
+　991.98px〜　→ 1024px〜　へ*/
+@media (min-width: 1024.1px) {
+ .Score {
+   font-size: 2rem;
+ }
+}
+/* 中デバイス（タブレット, 992px 未満）
+　991.98px→ 1024pxへ*/
+@media (max-width: 1024px) {
+ .Date {
+   font-size: 0.8rem;
+ }
+ .Score {
+  font-size: 2rem;
+}
+}
+/* 小デバイス（横向きモバイル, 768px 未満）*/
+@media (max-width: 767.98px) {
+ 
+}
+/* @include media-breakpoint-up(sm) {
+ 極小デバイス（縦向きモバイル, 576px 未満）*/
+@media (max-width: 575.98px) {
+ 
+}
