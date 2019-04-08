@@ -4,20 +4,20 @@ block content
   div.container
     div.jumbotron.my-1.py-2(style="font-size: 1.25em;")
       p.lead.text-center レアル・マドリード試合情報
-      div.row.border.justify-content-center.align-items-end.text-center
-        div.col-6.col-md-2.order-md-1.border.mr-md-3.px-0
+      div.row.justify-content-center.align-items-end.text-center
+        div.col-6.col-md-2.order-md-1.mr-md-3.px-0
           a(href=`/${fixture.fixtureDate}/last`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 前の試合
           a(href=`/${fixture.fixtureDate}/last`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ◀︎
-        div.col-6.col-md-2.order-md-3.border.ml-md-3.px-0
+        div.col-6.col-md-2.order-md-3.ml-md-3.px-0
           a(href=`/${fixture.fixtureDate}/next`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 次の試合
           a(href=`/${fixture.fixtureDate}/next`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ▶︎
         div.col-12.col-md-7.order-md-2
-          div.row.border.justify-content-center
-            div.col-10.border 
+          div.row.border.border-info.rounded.justify-content-center
+            div.col-10 
               a(href=`/${fixture.fixtureId}`) #{fixture.fixtureSort}
             div.w-100
-            div.col-10.border 日本時間 : #{fixture.formattedDate}〜KO
+            div.col-10 日本時間 : #{fixture.formattedDate}〜KO
             div.w-100
-            div.col-3.border.px-0 #{fixture.homeTeam}
-            div.col-5.border #{fixture.homeScore} - #{fixture.awayScore}
-            div.col-3.border.px-0 #{fixture.awayTeam}
+            div.col-3.px-0 #{fixture.homeTeam}
+            div.col-5 #{fixture.homeScore} - #{fixture.awayScore}
+            div.col-3.px-0 #{fixture.awayTeam}

@@ -12,3 +12,7 @@ li ul {
   margin: 0 0 0 1em;
   padding: 0;
   }
+
+.jumbotron {
+  background-color: rgb(255, 247, 153,0.45); /*ライムライト！*/
+}
