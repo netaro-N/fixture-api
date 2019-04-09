@@ -42,6 +42,7 @@
         - [x] sidemenu
         - [x] contents
     - [ ] fixture.pug!
+        - [ ]title の条件分岐 new Date() UTCをJSTへmomentで変換。fixture.Dateと比較して分岐する。
     - [ ] manage.pug管理人ページ
         - [ ] edit.pug
         - [ ] new.pug
