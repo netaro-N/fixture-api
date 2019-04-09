@@ -1,34 +1,24 @@
 extends layout
 
 block content
-  p #{title}
+  div.container
+    div.jumbotron.my-1.py-2
+      p.lead.text-center #{title}
+      div.row.justify-content-center.align-items-end.text-center
+        div.col-6.col-md-1.col-lg-2.order-md-1.mr-md-3.px-0
+          a(href=`/${fixture.fixtureDate}/last`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 前の試合
+          a(href=`/${fixture.fixtureDate}/last`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ◀︎
+        div.col-6.col-md-1.col-lg-2.order-md-3.ml-md-3.px-0
+          a(href=`/${fixture.fixtureDate}/next`).btn.btn-secondary.d-inline-flex.d-md-none.d-lg-inline-flex 次の試合
+          a(href=`/${fixture.fixtureDate}/next`).btn.btn-sm.btn-secondary.d-none.d-md-inline-flex.d-lg-none ▶︎
+        div.col-12.col-md-9.col-lg-7.order-md-2
+          div.row.border.border-info.rounded.justify-content-center
+            div.col-10 #{fixture.fixtureSort}
+            div.w-100
+            div.col-10.Date 日本時間 : #{fixture.formattedDate}〜KO
+            div.w-100
+            div.col-3.px-0.align-self-end #{fixture.homeTeam}
+            div.col-5.Score #{fixture.homeScore} - #{fixture.awayScore}
+            div.col-3.px-0.align-self-end #{fixture.awayTeam}
   div
     a(href=`${fixture.fixtureId}/edit`) この予定を編集する
-  div
-    table(border="1" style="font-size: 20px;")
-      tr
-        th fixtureId : #{fixture.fixtureId}
-        td fixtureSort :#{fixture.fixtureSort}
-      tr
-        td(colspan="2") fixtureDate :#{fixture.formattedDate}
-    p
-  div
-    table(border="2"  style="font-size: 20px;")
-      tr
-        th(colspan="2") ホーム
-        td 
-        th(colspan="2") アウェイ
-      tr
-        td #{fixture.homeTeam}
-        td #{fixture.homeScore}
-        td -
-        td #{fixture.awayScore}
-        td #{fixture.awayTeam}
-    p
-  div
-    table(border="3" style="font-size: 20px;")
-      tr
-        td 
-          a(href=`/${fixture.fixtureDate}/last`) 前の試合
-        td
-          a(href=`/${fixture.fixtureDate}/next`) 次の試合
