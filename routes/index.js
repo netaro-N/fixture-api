@@ -115,7 +115,7 @@ router.get('/:fixtureId', function (req, res, next) {
     if (fixture) {
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       res.render('fixture', {
-        title: 'こちらは個別ページです',
+        title: '終了／試合前',
         fixture: fixture
       });
     } else {
