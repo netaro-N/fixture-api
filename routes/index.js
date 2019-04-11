@@ -106,14 +106,18 @@ router.get('/:fixtureId/edit', function (req, res, next) {
 });
 
 router.get('/:fixtureId', function (req, res, next) {
-  console.log(req.params.fixtureId);
   Fixture.findOne({
     where: {
       fixtureId: req.params.fixtureId
     }
   }).then((fixture) => {
     if (fixture) {
+      const nowTime = new Date();
+      nowTime.setHours(nowTime.getHours() - 5);
+      const japanTimeminus5 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm");
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
+      const fixtureStatus = moment(fixture.formattedDate).isBefore(japanTimeminus5);
+      console.log(fixtureStatus);
       res.render('fixture', {
         title: '終了／試合前',
         fixture: fixture
@@ -165,7 +169,7 @@ router.get('/:fixtureDate/next', (req, res, next) => {
 });
 
 router.post('/1234', (req, res, next) => {
-  const file = 'real18-19.csv';
+  const file = 'real18-19-2.csv';
   let data = fs.readFileSync(file);
   let Parse = csvParse(data, {
     delimiter: ',',
