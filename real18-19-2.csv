@@ -1,0 +1,55 @@
+fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
+Lali1,19/08/2018 22:15,ラ・リーガ第1節,Real Madrid,Getafe CF,2,0
+Lali2,26/08/2018 22:15,ラ・リーガ第2節,Girona FC,Real Madrid,1,4
+Lali3,01/09/2018 20:45,ラ・リーガ第3節,Real Madrid,CD Leganés,4,1
+Lali4,15/09/2018 20:45,ラ・リーガ第4節,Athletic Club,Real Madrid,1,1
+CL1,19/09/2018 21:00,チャンピオンズリーグ（グループG）第1節,Real Madrid,Roma,3,0
+Lali5,22/09/2018 20:45,ラ・リーガ第5節,Real Madrid,RCD Espanyol,1,0
+Lali6,26/09/2018 22:00,ラ・リーガ第6節,Sevilla FC,Real Madrid,3,0
+Lali7,29/09/2018 20:45,ラ・リーガ第7節,Real Madrid,Atlético de Madrid,0,0
+CL2,02/10/2018 21:00,チャンピオンズリーグ（グループG）第2節,CSKA Moskva,Real Madrid,1,0
+Lali8,06/10/2018 20:45,ラ・リーガ第8節,D. Alavés,Real Madrid,1,0
+Lali9,20/10/2018 13:00,ラ・リーガ第9節,Real Madrid,Levante UD,1,2
+CL3,23/10/2018 21:00,チャンピオンズリーグ（グループG）第3節,Real Madrid,Plzen,2,1
+Lali10,28/10/2018 16:15,ラ・リーガ第10節,FC Barcelona,Real Madrid,5,1
+Copa1,31/10/2018 18:30,国王杯・ベスト32（1st）,Melilla,Real Madrid,0,4
+Lali11,03/11/2018 16:15,ラ・リーガ第11節,Real Madrid,R. Valladolid CF,2,0
+CL4,07/11/2018 21:00,チャンピオンズリーグ（グループG）第4節,Plzen,Real Madrid,0,5
+Lali12,11/11/2018 20:45,ラ・リーガ第12節,RC Celta,Real Madrid,2,4
+Lali13,24/11/2018 13:00,ラ・リーガ第13節,SD Eibar,Real Madrid,3,0
+CL5,27/11/2018 21:00,チャンピオンズリーグ（グループG）第5節,Roma,Real Madrid,0,2
+Lali14,01/12/2018 20:45,ラ・リーガ第14節,Real Madrid,Valencia CF,2,0
+Copa2,06/12/2018 15:15,国王杯・ベスト32（2nd）,Real Madrid,Melilla,6,1
+Lali15,09/12/2018 16:15,ラ・リーガ第15節,SD Huesca,Real Madrid,0,1
+CL6,12/12/2018 18:55,チャンピオンズリーグ（グループG）第6節,Real Madrid,CSKA Moskva,0,3
+Lali16,15/12/2018 18:30,ラ・リーガ第16節,Real Madrid,Rayo Vallecano,1,0
+Lali17,03/01/2019 21:30,ラ・リーガ第17節,Villarreal CF,Real Madrid,2,2
+Lali18,06/01/2019 18:30,ラ・リーガ第18節,Real Madrid,Real Sociedad,0,2
+Copa3,09/01/2019 20:30,国王杯・ベスト16（1st）,Real Madrid,CD Leganés,3,0
+Lali19,13/01/2019 20:45,ラ・リーガ第19節,Real Betis,Real Madrid,1,2
+Copa4,16/01/2019 20:30,国王杯・ベスト16（2nd）,CD Leganés,Real Madrid,1,0
+Lali20,19/01/2019 16:15,ラ・リーガ第20節,Real Madrid,Sevilla FC,2,0
+Copa5,24/01/2019 20:30,国王杯・ベスト8（1st）,Real Madrid,Girona FC,4,2
+Lali21,27/01/2019 20:45,ラ・リーガ第21節,RCD Espanyol,Real Madrid,2,4
+Copa6,31/01/2019 20:30,国王杯・ベスト8（2nd）,Girona FC,Real Madrid,1,3
+Lali22,03/02/2019 20:45,ラ・リーガ第22節,Real Madrid,D. Alavés,3,0
+Copa7,06/02/2019 21:00,国王杯・準決勝（1st）,FC Barcelona,Real Madrid,1,1
+Lali23,09/02/2019 16:15,ラ・リーガ第23節,Atlético de Madrid,Real Madrid,1,3
+CL7,13/02/2019 21:00,チャンピオンズリーグ（決勝T）1stレグ,Ajax,Real Madrid,1,2
+Lali24,17/02/2019 12:00,ラ・リーガ第24節,Real Madrid,Girona FC,1,2
+Lali25,24/02/2019 20:45,ラ・リーガ第25節,Levante UD,Real Madrid,1,2
+Copa8,27/02/2019 21:00,国王杯・準決勝（2nd）,Real Madrid,FC Barcelona,0,3
+Lali26,02/03/2019 20:45,ラ・リーガ第26節,Real Madrid,FC Barcelona,0,1
+CL8,05/03/2019 21:00,チャンピオンズリーグ（決勝T）2stレグ,Real Madrid,Ajax,1,4
+Lali27,10/03/2019 20:45,ラ・リーガ第27節,R. Valladolid CF,Real Madrid,1,4
+Lali28,16/03/2019 16:15,ラ・リーガ第28節,Real Madrid,RC Celta,2,0
+Lali29,31/03/2019 20:45,ラ・リーガ第29節,Real Madrid,SD Huesca,3,2
+Lali30,03/04/2019 21:30,ラ・リーガ第30節,Valencia CF,Real Madrid,2,1
+Lali31,06/04/2019 16:15,ラ・リーガ第31節,Real Madrid,SD Eibar,2,1
+Lali32,15/04/2019 21:00,ラ・リーガ第32節,CD Leganés,Real Madrid,,
+Lali33,21/04/2019 16:15,ラ・リーガ第33節,Real Madrid,Athletic Club,,
+Lali34,25/04/2019 21:30,ラ・リーガ第34節,Getafe CF,Real Madrid,,
+Lali35,28/04/2019 20:45,ラ・リーガ第35節,Rayo Vallecano,Real Madrid,,
+Lali36,05/05/2019 12:00,ラ・リーガ第36節,Real Madrid,Villarreal CF,,
+Lali37,12/05/2019 12:00,ラ・リーガ第37節,Real Sociedad,Real Madrid,,
+Lali38,19/05/2019 12:00,ラ・リーガ第38節,Real Madrid,Real Betis,,
