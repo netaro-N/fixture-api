@@ -112,14 +112,19 @@ router.get('/:fixtureId', function (req, res, next) {
     }
   }).then((fixture) => {
     if (fixture) {
+      let fixtureTitle = '';
       const nowTime = new Date();
       nowTime.setHours(nowTime.getHours() - 5);
       const japanTimeminus5 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm");
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
       const fixtureStatus = moment(fixture.formattedDate).isBefore(japanTimeminus5);
-      console.log(fixtureStatus);
+      if (fixtureStatus) {
+        fixtureTitle = '試合終了'
+      }else {
+        fixtureTitle = '試合前'
+      }
       res.render('fixture', {
-        title: '終了／試合前',
+        title: fixtureTitle,
         fixture: fixture
       });
     } else {
