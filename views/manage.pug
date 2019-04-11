@@ -2,21 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcom to #{title}
   div
-    button#csv-parse-button.btn.btn-warninf csvファイルをデータベースに保存する
-    p
+    button#csv-parse-button.btn.btn-warning.my-1 csvファイルをデータベースに保存する
   div
-    table(border="4" style="font-size: 20px;")
-      tr
-        td 
-          a(href="/new").btn.btn-info 新しい予定
-  form(method="post", action="/edit")
-    div.form-group
-      label(for="fixtureId") fixtureId
-      input(type="text" name="fixtureId" autocomplete="on" list="ID" required)#fixtureId
-      datalist(id="ID")
-        each id in ID
-          option(value=`${id}`)
-    div
-      button(type="submit") 日程を編集する
+    a(href="/new").btn.btn-info 新しい予定
+  form(method="post", action="/edit").form-inline.border
+    label(for="fixtureId").sr-only fixtureId
+    input(type="text" name="fixtureId" autocomplete="on" list="ID" placeholder="fixtureId" required)#fixtureId.form-control.my-1
+    datalist(id="ID")
+      each id in ID
+        option(value=`${id}`)
+    button(type="submit").btn.btn-success.my-1 日程を編集する
