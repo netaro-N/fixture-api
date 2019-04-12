@@ -5,7 +5,7 @@ block content
   form(method="post", action="/new")
     div.form-group.row
       label(for="fixtureId").col-md-2.col-form-label fixtureId
-      div.col-md-10
+      div.col-sm-8.col-10
         input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId.form-control
         datalist(id="ID")
           option(value="Lali")
@@ -13,11 +13,11 @@ block content
           option(value="CL")
     div.form-group.row
       label(for="fixtureDate").col-md-2.col-form-label fixtureDate
-      div.col-md-10
+      div.col-sm-8.col-10
         input(type="datetime-local" name="fixtureDate")#fixtureDate.form-control
     div.form-group.row
       label(for="fixtureSort").col-md-2.col-form-label fixtureSort
-      div.col-md-10
+      div.col-sm-8.col-10
         input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT")#fixtureSort.form-control
         datalist(id="SORT")
           option(value="ラ・リーガ第")
@@ -25,7 +25,7 @@ block content
           option(value="国王杯")
     div.form-group.row
       label(for="homeTeam").col-md-2.col-form-label homeTeam
-      div.col-md-10
+      div.col-sm-8.col-10
         input(type="text" name="homeTeam" autocomplete="on" list="HORM")#homeTeam.form-control
         datalist(id="HORM")
           option(value="Ajax")
@@ -55,7 +55,7 @@ block content
           option(value="Villarreal CF")
     div.form-group.row
       label(for="awayTeam").col-md-2.col-form-label awayTeam
-      div.col-md-10
+      div.col-sm-8.col-10
         input(type="text" name="awayTeam" autocomplete="on" list="AWAY")#awayTeam.form-control
         datalist(id="AWAY")
           option(value="Ajax")
@@ -84,4 +84,4 @@ block content
           option(value="Valencia CF")
           option(value="Villarreal CF")
     div
-      button(type="submit") 日程を作成する
+      button(type="submit").btn.btn-primary 以上の内容で作成する
