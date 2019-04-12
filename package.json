@@ -8,25 +8,25 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "cookie-parser": "~1.4.3",
-    "csv-parse": "^4.3.3",
+    "csv-parse": "^4.4.0",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "helmet": "^3.15.1",
+    "helmet": "^3.16.0",
     "http-errors": "~1.6.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "moment-timezone": "^0.5.23",
     "morgan": "~1.9.0",
-    "pg": "^7.8.1",
+    "pg": "^7.9.0",
     "pg-hstore": "^2.3.2",
-    "popper.js": "^1.14.7",
+    "popper.js": "^1.15.0",
     "pug": "^2.0.3",
-    "sequelize": "^4.42.0"
+    "sequelize": "^5.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "babel-loader": "^8.0.5",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
