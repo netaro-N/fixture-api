@@ -5,14 +5,16 @@ block content
   form(method="post", action="/new")
     div.form-group.row
       label(for="fixtureId").col-md-2.col-form-label fixtureId
-      input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId.col-md-10
-      datalist(id="ID")
-        option(value="Lali")
-        option(value="Copa")
-        option(value="CL")
+      div.col-md-10
+        input(type="text" name="fixtureId" autocomplete="on" list="ID")#fixtureId.form-control
+        datalist(id="ID")
+          option(value="Lali")
+          option(value="Copa")
+          option(value="CL")
     div.form-group.row
       label(for="fixtureDate").col-md-2.col-form-label fixtureDate
-      input(type="datetime-local" name="fixtureDate")#fixtureDate.col-md-10
+      div.col-md-10
+        input(type="datetime-local" name="fixtureDate")#fixtureDate.form-control
     div.form-group
       label(for="fixtureSort") fixtureSort
       input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT")#fixtureSort
