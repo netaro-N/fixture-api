@@ -4,79 +4,85 @@ block content
   h3= title
   a(href=`/${fixture.fixtureId}`) 予定に戻る
   form(method="post", action=`/${fixture.fixtureId}/edit`)
-    div.form-group
-      label(for="fixtureDate") fixtureDate
-      input(type="datetime-local" name="fixtureDate" value=fixture.formattedDate)#fixtureDate
-    div.form-group
-      label(for="fixtureSort") fixtureSort
-      input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT" value=fixture.fixtureSort)#fixtureSort
-      datalist(id="SORT")
-        option(value="ラ・リーガ第")
-        option(value="チャンピオンズリーグ")
-        option(value="国王杯")
-    div.form-group
-      label(for="homeTeam") homeTeam
-      input(type="text" name="homeTeam" autocomplete="on" list="HORM" value=fixture.homeTeam)#homeTeam
-      datalist(id="HORM")
-        option(value="Ajax")
-        option(value="Athletic Club")
-        option(value="Atlético de Madrid")
-        option(value="CD Leganés")
-        option(value="CSKA Moskva")
-        option(value="D. Alavés")
-        option(value="FC Barcelona")
-        option(value="Getafe CF")
-        option(value="Girona FC")
-        option(value="Levante UD")
-        option(value="Melilla")
-        option(value="Plzen")
-        option(value="R. Valladolid CF")
-        option(value="Rayo Vallecano")
-        option(value="RC Celta")
-        option(value="RCD Espanyol")
-        option(value="Real Betis")
-        option(value="Real Madrid")
-        option(value="Real Sociedad")
-        option(value="Roma")
-        option(value="SD Eibar")
-        option(value="SD Huesca")
-        option(value="Sevilla FC")
-        option(value="Valencia CF")
-        option(value="Villarreal CF")
-    div.form-group
-      label(for="awayTeam") awayTeam
-      input(type="text" name="awayTeam" autocomplete="on" list="AWAY" value=fixture.awayTeam)#awayTeam
-      datalist(id="AWAY")
-        option(value="Ajax")
-        option(value="Athletic Club")
-        option(value="Atlético de Madrid")
-        option(value="CD Leganés")
-        option(value="CSKA Moskva")
-        option(value="D. Alavés")
-        option(value="FC Barcelona")
-        option(value="Getafe CF")
-        option(value="Girona FC")
-        option(value="Levante UD")
-        option(value="Melilla")
-        option(value="Plzen")
-        option(value="R. Valladolid CF")
-        option(value="Rayo Vallecano")
-        option(value="RC Celta")
-        option(value="RCD Espanyol")
-        option(value="Real Betis")
-        option(value="Real Madrid")
-        option(value="Real Sociedad")
-        option(value="Roma")
-        option(value="SD Eibar")
-        option(value="SD Huesca")
-        option(value="Sevilla FC")
-        option(value="Valencia CF")
-        option(value="Villarreal CF")
-    div.form-group
-      label(for="homeScore") homeScore
-      input(type="text" name="homeScore" value=fixture.homeScore)#homeScore
-    div.form-group
-      label(for="awayScore") awayScore
-      input(type="text" name="awayScore" value=fixture.awayScore)#awayScore
+    div.form-row
+      div.col-6.m-1
+        label(for="fixtureDate").mb-0 fixtureDate
+        input(type="datetime-local" name="fixtureDate" value=fixture.formattedDate)#fixtureDate.form-control
+    div.form-row
+      div.col-6.m-1
+        label(for="fixtureSort").mb-0 fixtureSort
+        input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT" value=fixture.fixtureSort)#fixtureSort.form-control
+        datalist(id="SORT")
+          option(value="ラ・リーガ第")
+          option(value="チャンピオンズリーグ")
+          option(value="国王杯")
+    div.form-row
+      div.col-6.m-1
+        label(for="homeTeam").mb-0 homeTeam
+        input(type="text" name="homeTeam" autocomplete="on" list="HORM" value=fixture.homeTeam)#homeTeam.form-control
+        datalist(id="HORM")
+          option(value="Ajax")
+          option(value="Athletic Club")
+          option(value="Atlético de Madrid")
+          option(value="CD Leganés")
+          option(value="CSKA Moskva")
+          option(value="D. Alavés")
+          option(value="FC Barcelona")
+          option(value="Getafe CF")
+          option(value="Girona FC")
+          option(value="Levante UD")
+          option(value="Melilla")
+          option(value="Plzen")
+          option(value="R. Valladolid CF")
+          option(value="Rayo Vallecano")
+          option(value="RC Celta")
+          option(value="RCD Espanyol")
+          option(value="Real Betis")
+          option(value="Real Madrid")
+          option(value="Real Sociedad")
+          option(value="Roma")
+          option(value="SD Eibar")
+          option(value="SD Huesca")
+          option(value="Sevilla FC")
+          option(value="Valencia CF")
+          option(value="Villarreal CF")
+    div.form-row
+      div.col-6.m-1
+        label(for="awayTeam").mb-0 awayTeam
+        input(type="text" name="awayTeam" autocomplete="on" list="AWAY" value=fixture.awayTeam)#awayTeam.form-control
+        datalist(id="AWAY")
+          option(value="Ajax")
+          option(value="Athletic Club")
+          option(value="Atlético de Madrid")
+          option(value="CD Leganés")
+          option(value="CSKA Moskva")
+          option(value="D. Alavés")
+          option(value="FC Barcelona")
+          option(value="Getafe CF")
+          option(value="Girona FC")
+          option(value="Levante UD")
+          option(value="Melilla")
+          option(value="Plzen")
+          option(value="R. Valladolid CF")
+          option(value="Rayo Vallecano")
+          option(value="RC Celta")
+          option(value="RCD Espanyol")
+          option(value="Real Betis")
+          option(value="Real Madrid")
+          option(value="Real Sociedad")
+          option(value="Roma")
+          option(value="SD Eibar")
+          option(value="SD Huesca")
+          option(value="Sevilla FC")
+          option(value="Valencia CF")
+          option(value="Villarreal CF")
+    div.form-row
+      div.col-6.m-1
+        label(for="homeScore").mb-0 homeScore
+        input(type="text" name="homeScore" value=fixture.homeScore)#homeScore.form-control
+    div.form-row
+      div.col-6.m-1
+        label(for="awayScore").mb-0 awayScore
+        input(type="text" name="awayScore" value=fixture.awayScore)#awayScore.form-control
     div
-      button(type="submit") 日程を編集する
+      button(type="submit").btn.btn-primary 日程を編集する
