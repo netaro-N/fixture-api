@@ -15,70 +15,73 @@ block content
       label(for="fixtureDate").col-md-2.col-form-label fixtureDate
       div.col-md-10
         input(type="datetime-local" name="fixtureDate")#fixtureDate.form-control
-    div.form-group
-      label(for="fixtureSort") fixtureSort
-      input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT")#fixtureSort
-      datalist(id="SORT")
-        option(value="ラ・リーガ第")
-        option(value="チャンピオンズリーグ")
-        option(value="国王杯")
-    div.form-group
-      label(for="homeTeam") homeTeam
-      input(type="text" name="homeTeam" autocomplete="on" list="HORM")#homeTeam
-      datalist(id="HORM")
-        option(value="Ajax")
-        option(value="Athletic Club")
-        option(value="Atlético de Madrid")
-        option(value="CD Leganés")
-        option(value="CSKA Moskva")
-        option(value="D. Alavés")
-        option(value="FC Barcelona")
-        option(value="Getafe CF")
-        option(value="Girona FC")
-        option(value="Levante UD")
-        option(value="Melilla")
-        option(value="Plzen")
-        option(value="R. Valladolid CF")
-        option(value="Rayo Vallecano")
-        option(value="RC Celta")
-        option(value="RCD Espanyol")
-        option(value="Real Betis")
-        option(value="Real Madrid")
-        option(value="Real Sociedad")
-        option(value="Roma")
-        option(value="SD Eibar")
-        option(value="SD Huesca")
-        option(value="Sevilla FC")
-        option(value="Valencia CF")
-        option(value="Villarreal CF")
-    div.form-group
-      label(for="awayTeam") awayTeam
-      input(type="text" name="awayTeam" autocomplete="on" list="AWAY")#awayTeam
-      datalist(id="AWAY")
-        option(value="Ajax")
-        option(value="Athletic Club")
-        option(value="Atlético de Madrid")
-        option(value="CD Leganés")
-        option(value="CSKA Moskva")
-        option(value="D. Alavés")
-        option(value="FC Barcelona")
-        option(value="Getafe CF")
-        option(value="Girona FC")
-        option(value="Levante UD")
-        option(value="Melilla")
-        option(value="Plzen")
-        option(value="R. Valladolid CF")
-        option(value="Rayo Vallecano")
-        option(value="RC Celta")
-        option(value="RCD Espanyol")
-        option(value="Real Betis")
-        option(value="Real Madrid")
-        option(value="Real Sociedad")
-        option(value="Roma")
-        option(value="SD Eibar")
-        option(value="SD Huesca")
-        option(value="Sevilla FC")
-        option(value="Valencia CF")
-        option(value="Villarreal CF")
+    div.form-group.row
+      label(for="fixtureSort").col-md-2.col-form-label fixtureSort
+      div.col-md-10
+        input(type="text" size="50" name="fixtureSort" autocomplete="on" list="SORT")#fixtureSort.form-control
+        datalist(id="SORT")
+          option(value="ラ・リーガ第")
+          option(value="チャンピオンズリーグ")
+          option(value="国王杯")
+    div.form-group.row
+      label(for="homeTeam").col-md-2.col-form-label homeTeam
+      div.col-md-10
+        input(type="text" name="homeTeam" autocomplete="on" list="HORM")#homeTeam.form-control
+        datalist(id="HORM")
+          option(value="Ajax")
+          option(value="Athletic Club")
+          option(value="Atlético de Madrid")
+          option(value="CD Leganés")
+          option(value="CSKA Moskva")
+          option(value="D. Alavés")
+          option(value="FC Barcelona")
+          option(value="Getafe CF")
+          option(value="Girona FC")
+          option(value="Levante UD")
+          option(value="Melilla")
+          option(value="Plzen")
+          option(value="R. Valladolid CF")
+          option(value="Rayo Vallecano")
+          option(value="RC Celta")
+          option(value="RCD Espanyol")
+          option(value="Real Betis")
+          option(value="Real Madrid")
+          option(value="Real Sociedad")
+          option(value="Roma")
+          option(value="SD Eibar")
+          option(value="SD Huesca")
+          option(value="Sevilla FC")
+          option(value="Valencia CF")
+          option(value="Villarreal CF")
+    div.form-group.row
+      label(for="awayTeam").col-md-2.col-form-label awayTeam
+      div.col-md-10
+        input(type="text" name="awayTeam" autocomplete="on" list="AWAY")#awayTeam.form-control
+        datalist(id="AWAY")
+          option(value="Ajax")
+          option(value="Athletic Club")
+          option(value="Atlético de Madrid")
+          option(value="CD Leganés")
+          option(value="CSKA Moskva")
+          option(value="D. Alavés")
+          option(value="FC Barcelona")
+          option(value="Getafe CF")
+          option(value="Girona FC")
+          option(value="Levante UD")
+          option(value="Melilla")
+          option(value="Plzen")
+          option(value="R. Valladolid CF")
+          option(value="Rayo Vallecano")
+          option(value="RC Celta")
+          option(value="RCD Espanyol")
+          option(value="Real Betis")
+          option(value="Real Madrid")
+          option(value="Real Sociedad")
+          option(value="Roma")
+          option(value="SD Eibar")
+          option(value="SD Huesca")
+          option(value="Sevilla FC")
+          option(value="Valencia CF")
+          option(value="Villarreal CF")
     div
       button(type="submit") 日程を作成する
