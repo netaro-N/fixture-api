@@ -7,10 +7,12 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const Fixture = require('../models/fixture');
 
+
 //曜日を入れてみた
 moment.locale('ja', {
   weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"],
 });
+
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -20,7 +22,7 @@ router.get('/', function (req, res, next) {
   console.log(new Date(japanTimeplus2));
   Fixture.findOne({
     where: {
-      fixtureDate: { [Op.lte]: new Date(japanTimeplus2) } // fixtureDate <= japanTimeplus2
+      fixtureDate: { [Op.lte]: new Date(japanTimeplus2) } // fixtureDate <= japanTimeplus2 2019/04/13 Op.lte → $lte
     },
     order: [['"fixtureDate"', 'DESC']]
   }).then((fixture) => {
@@ -117,7 +119,7 @@ router.get('/:fixtureId', function (req, res, next) {
       nowTime.setHours(nowTime.getHours() - 5);
       const japanTimeminus5 = moment(nowTime).tz('Asia/Tokyo').format("YYYY/MM/DD HH:mm");
       fixture.formattedDate = moment(fixture.fixtureDate).format('YYYY/MM/DD (ddd) HH:mm');
-      const fixtureStatus = moment(fixture.formattedDate).isBefore(japanTimeminus5);
+      const fixtureStatus = moment(new Date(fixture.formattedDate)).isBefore(new Date(japanTimeminus5));
       if (fixtureStatus) {
         fixtureTitle = '試合終了'
       }else {
@@ -136,7 +138,7 @@ router.get('/:fixtureId', function (req, res, next) {
 });
 
 router.get('/:fixtureDate/last', (req, res, next) => {
-  const originDate = moment(req.params.fixtureDate);
+  const originDate = moment(new Date(req.params.fixtureDate));
   console.log(originDate);
   Fixture.findOne({
     where: {
@@ -155,7 +157,7 @@ router.get('/:fixtureDate/last', (req, res, next) => {
 });
 
 router.get('/:fixtureDate/next', (req, res, next) => {
-  const originDate = moment(req.params.fixtureDate);
+  const originDate = moment(new Date(req.params.fixtureDate));
   console.log(originDate);
   Fixture.findOne({
     where: {

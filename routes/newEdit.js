@@ -29,13 +29,10 @@ router.post('/new', (req, res, next) => {
 });
 
 router.post('/:fixtureId', (req, res, next) => {
-  
-  //fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
-
-//  const fixtureDate = new Date(req.body.fixtureDate);
-//  const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
-
-  // ②保存する
+  const fixtureDate = new Date(req.body.fixtureDate);
+  const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
+  console.log(fixtureDate+' → '+formattedDate);
+  console.log('確認しました');
   Fixture.findOne({
     where: {
       fixtureId: req.params.fixtureId
@@ -43,8 +40,6 @@ router.post('/:fixtureId', (req, res, next) => {
   }).then((f) => {
     if (f) {
       if (parseInt(req.query.edit) === 1){
-        const fixtureDate = new Date(req.body.fixtureDate);
-        const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
       f.update({
         fixtureId: f.fixtureId,
         fixtureDate: formattedDate,
