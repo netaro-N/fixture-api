@@ -31,18 +31,10 @@ router.post('/new', (req, res, next) => {
 router.post('/:fixtureId', (req, res, next) => {
   
   //fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
-  const ID = req.params.fixtureId;
-  const fixtureDate = new Date(req.body.fixtureDate);
-  const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
-  console.log(req.body);
-  //①保存データの確認
-  console.log('fixtureId =' + ID);
-  console.log(fixtureDate + "→" + formattedDate);
-  console.log(req.body.fixtureSort);
-  console.log(req.body.homeTeam);
-  console.log(req.body.awayTeam);
-  console.log(req.body.homeScore);
-  console.log(req.body.awayScore);
+
+//  const fixtureDate = new Date(req.body.fixtureDate);
+//  const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
+
   // ②保存する
   Fixture.findOne({
     where: {
@@ -51,6 +43,8 @@ router.post('/:fixtureId', (req, res, next) => {
   }).then((f) => {
     if (f) {
       if (parseInt(req.query.edit) === 1){
+        const fixtureDate = new Date(req.body.fixtureDate);
+        const formattedDate = moment(fixtureDate).format("YYYY/MM/DD HH:mm");
       f.update({
         fixtureId: f.fixtureId,
         fixtureDate: formattedDate,
