@@ -44,10 +44,14 @@
     - [x] fixture.pug!
         - [x] title の条件分岐 new Date() UTCをJSTへmomentで変換。fixture.Dateと比較して分岐する。
                 moment(fixtureDate + 3h).isBefore( ${現在日本時間} ); true => title=終了
-    - [ ] manage.pug管理人ページ
-        - [ ] edit.pug
-        - [ ] new.pug
+    - [x] manage.pug管理人ページ
+        - [x] edit.pug
+        - [x] new.pug
+    - [ ] 削除機能の実装
     - [ ] matchlist.pug試合一覧
+
+- [ ] momentやnew Dateのあれこれ勉強
+- [ ] sequelize , promise , 勉強必要
 
 - [ ] コード印刷と理解、復習
 
