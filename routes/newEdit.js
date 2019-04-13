@@ -28,7 +28,8 @@ router.post('/new', (req, res, next) => {
   });
 });
 
-router.post('/:fixtureId/edit', (req, res, next) => {
+router.post('/:fixtureId', (req, res, next) => {
+  
   //fixtureId,fixtureDate,fixtureSort,homeTeam,awayTeam,homeScore,awayScore
   const ID = req.params.fixtureId;
   const fixtureDate = new Date(req.body.fixtureDate);
@@ -49,6 +50,7 @@ router.post('/:fixtureId/edit', (req, res, next) => {
     }
   }).then((f) => {
     if (f) {
+      if (parseInt(req.query.edit) === 1){
       f.update({
         fixtureId: f.fixtureId,
         fixtureDate: formattedDate,
@@ -60,7 +62,17 @@ router.post('/:fixtureId/edit', (req, res, next) => {
       }).then((fixture) => {
         res.redirect('/' + fixture.fixtureId);
       });
+    } else if (parseInt(req.query.delete) ===1 ){
+      console.log('get!!' + req.params.fixtureId);
+      res.redirect('/');
     } else {
+      const err = new Error('不正なリクエストです');
+      err.status = 400;
+      next(err);
+    }
+    
+    
+  }else {
       const err = new Error('指定された予定がありません');
       err.status = 404;
       next(err);
