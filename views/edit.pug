@@ -3,6 +3,8 @@ extends layout
 block content
   h3= title
   a(href=`/${fixture.fixtureId}`) 予定に戻る
+  form(method="post", action=`/${fixture.fixtureId}/edit?delete=1`)
+    button(type="submit").btn.btn-danger この予定を削除する
   form(method="post", action=`/${fixture.fixtureId}/edit`)
     div.form-row
       div.col-6.m-1
