@@ -1,6 +1,7 @@
 'use strict';
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+/*
 const operatorsAliases = {
   $eq: Op.eq,
   $ne: Op.ne,
@@ -37,11 +38,12 @@ const operatorsAliases = {
   $values: Op.values,
   $col: Op.col
 };
+*/
 
 const sequelize = new Sequelize(
   'postgres://postgres:postgres@localhost/fixture_api',
   {
-    operatorsAliases
+    operatorsAliases: false
   });
 
 module.exports = {
