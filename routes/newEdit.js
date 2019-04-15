@@ -53,14 +53,14 @@ router.post('/:fixtureId', (req, res, next) => {
       });
     } else if (parseInt(req.query.delete) ===1 ){
       console.log('get!!' + req.params.fixtureId);
-      res.redirect('/');
+      deleteFixture(req.params.fixtureId, () => { // １：ID　２：done関数
+        res.redirect('/');
+      });
     } else {
       const err = new Error('不正なリクエストです');
       err.status = 400;
       next(err);
     }
-    
-    
   }else {
       const err = new Error('指定された予定がありません');
       err.status = 404;
@@ -68,4 +68,11 @@ router.post('/:fixtureId', (req, res, next) => {
     }
   });
 });
+
+function deleteFixture (fixtureId, done, err) {
+  Fixture.findByPk(fixtureId).then((f) => { f.destroy(); });
+  if (err) return done(err);
+  done();
+}
+
 module.exports = router;
