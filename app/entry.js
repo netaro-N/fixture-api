@@ -1,9 +1,18 @@
 'use strict';
-import $ from 'jQuery';
+import $ from 'jquery';
 const global = Function('return this;')();
 global.jQuery = $;
 import bootstrap from 'bootstrap';
 
+
+// 削除時のコンフィメーション
+require('bootstrap-confirmation2');
+$('[data-toggle=confirmation]').confirmation({
+  rootSelector: '[data-toggle=confirmation]',
+  // other options
+});
+
+// csvパースの実行
 const buttonCsvParse = $('#csv-parse-button');
 buttonCsvParse.click(() => {
   const confirm = window.confirm('サーバーにあるcsvファイルをデータベースに保存しますか？');
