@@ -43,7 +43,7 @@ const operatorsAliases = {
 const sequelize = new Sequelize(
   'postgres://postgres:postgres@localhost/fixture_api',
   {
-    operatorsAliases: false
+    //operatorsAliases: false
   });
 
 module.exports = {
